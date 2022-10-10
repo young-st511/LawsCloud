@@ -19,3 +19,4 @@
     5. Refactor : 코드 리팩토링 (변수명 수정 등)
 2. Subject : 제목
     1. type : subject
+    2. body
