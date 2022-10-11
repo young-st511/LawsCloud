@@ -1,10 +1,13 @@
-import "./App.css";
+import ToggleLike from "./components/ToggleLike";
+import React from "react";
+import Reply from "./components/Reply";
 
 function App() {
   return (
-    <div className='App'>
-      {/*  */}
-      {/*  */}
+    // eslint-disable-next-line react/react-in-jsx-scope
+    <div className="App">
+      <ToggleLike />
+      <Reply />
     </div>
   );
 }
