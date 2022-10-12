@@ -6,77 +6,89 @@ function BillsContents({billsInformation}) {
   return (
     <Container>
       <BorderLine />
-      <BillInformatoinArea>
-        <Title>
-          <p className="title">의안명</p>
-        </Title>
-        <div className="billName">{billsInformation.BILL_NAME}</div>
-      </BillInformatoinArea>
-      <BillInformatoinArea>
-        <Title>
-          <p className="title">발의정보</p>
-        </Title>
-        <Informaiton>
-          <p>{billsInformation.PROPOSER}</p>,<p>제{billsInformation.BILL_NO}호</p>
-        </Informaiton>
-        <BillInformatoinArea>
-          <Title>
-            <p className="title">국회진행상황</p>
-          </Title>
-          <p className="progress">
+      <BillNameArea>
+        <Title>의안명</Title>
+        <BillName>{billsInformation.BILL_NAME}</BillName>
+      </BillNameArea>
+      <BillInformationArea>
+        <InfoArea>
+          <Title>발의정보</Title>
+          <BillInfo>
+            <p>{billsInformation.PROPOSER},</p>
+            <p>제{billsInformation.BILL_NO}호</p>
+          </BillInfo>
+        </InfoArea>
+        <BillProcResultArea>
+          <Title>국회진행상황</Title>
+          <BillProc>
             {billsInformation.PROC_RESULT} {billsInformation.PROPOSE_DT}
-          </p>
-        </BillInformatoinArea>
-      </BillInformatoinArea>
-      <BillInformatoinArea>
+          </BillProc>
+          <BillCommittee>{billsInformation.COMMITTEE}</BillCommittee>
+        </BillProcResultArea>
+      </BillInformationArea>
+      <BillInformationArea>
         <BillsDetailTitle>
           <p className="title">제안이유 및 주요내용</p>
         </BillsDetailTitle>
         <BillsDetail billId={billsInformation.BILL_ID} />
-      </BillInformatoinArea>
+      </BillInformationArea>
     </Container>
   );
 }
 
 const Container = styled.div`
-  width: 1200px;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  min-width: 900px;
+  max-width: 1200px;
+
+  margin: auto;
 
   border: solid;
   border-width: 1px 0 0 1px;
   border-color: #888080;
 `;
-const BillInformatoinArea = styled.div`
+
+const BillProcResultArea = styled.div`
   display: flex;
+  flex: 1;
+`;
 
-  .billName {
-    width: 85%;
+const BillInformationArea = styled.div`
+  display: flex;
+`;
 
-    display: flex;
-    align-items: center;
-    padding-left: 14px;
+const BillProc = styled.div`
+  width: 40%;
 
-    border: solid;
-    border-width: 0 1px 1px 0;
-    border-color: #888080;
-  }
+  display: flex;
+  align-items: center;
 
-  .progress {
-    width: 70vh;
+  padding-left: 14px;
 
-    display: flex;
-    align-items: center;
+  border: solid;
+  border-width: 0 1px 1px 0;
+  border-color: #888080;
+`;
 
-    padding-left: 6px;
+const BillNameArea = styled.div`
+  display: flex;
+`;
 
-    border: solid;
-    border-width: 0 1px 1px 0;
-    border-color: #888080;
-  }
+const BillName = styled.div`
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  padding-left: 14px;
+
+  border: solid;
+  border-width: 0 1px 1px 0;
+  border-color: #888080;
 `;
 
 const Title = styled.div`
@@ -85,6 +97,8 @@ const Title = styled.div`
 
   display: flex;
   align-items: center;
+
+  padding-left: 41px;
 
   font-weight: 700;
   font-size: 16px;
@@ -96,23 +110,37 @@ const Title = styled.div`
   border: solid;
   border-width: 0 1px 1px 0;
   border-color: #888080;
-
-  .title {
-    padding-left: 41px;
-  }
 `;
 
-const Informaiton = styled.div`
+const InfoArea = styled.div`
+  display: flex;
+
+  width: 40%;
+`;
+
+const BillInfo = styled.div`
   display: flex;
   align-items: center;
+  flex: 1;
+  gap: 10px;
 
   padding-left: 14px;
-  padding-right: 90px;
-
-  white-space: nowrap;
 
   border: solid;
   border-width: 0 1px 1px 0;
+  border-color: #888080;
+`;
+
+const BillCommittee = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+
+  padding-left: 14px;
+
+  border: solid;
+  border-width: 0 1px 1px 0;
+  border-color: #888080;
 `;
 
 const BillsDetailTitle = styled(Title)`
