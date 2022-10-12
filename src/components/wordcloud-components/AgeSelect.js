@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const AgeSelect = ({age, setAge, setYear, agesAndYears, size = 100}) => {
   const handleChange = ({target: {value}}) => {
-    setAge(value);
-    setYear(agesAndYears[value].firstYear);
+    setAge(Number(value));
+    setYear(Number(agesAndYears[value].firstYear));
     console.log(`now age: ${value} 대`);
   };
 

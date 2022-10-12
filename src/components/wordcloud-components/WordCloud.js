@@ -26,7 +26,7 @@ export default WordCloud;
 const StyledWrapper = styled.div`
   .wordcloud {
     width: ${({size}) => (size / 100) * 600}px;
-    height: ${({size}) => (size / 100) * 600}px;
+    height: ${({size}) => (size / 100) * 550}px;
     margin: 20px auto;
     span.cloud-word {
       cursor: pointer;
