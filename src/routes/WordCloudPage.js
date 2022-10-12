@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Title from "../components/wordcloud-components/Title";
-import SearchBar from "../components/wordcloud-components/SearchBar(not-use)";
 import WordCloudSection from "../components/wordcloud-components/WordCloudSection";
 import styled from "styled-components";
 
@@ -10,12 +8,10 @@ const mockSearch = (keyword) => console.log(keyword);
 const WordCloudPage = ({setSearch = mockSearch}) => {
   return (
     <StyledWrapper>
-      <Title />
-      <SearchBar setSearch={setSearch} />
       <WordCloudSection setSearch={setSearch} size={100} />
-      <button type="button" className="compare-button">
+      {/* <button type="button" className="compare-button">
         비교해보기
-      </button>
+      </button> */}
     </StyledWrapper>
   );
 };
@@ -27,11 +23,14 @@ WordCloudPage.propTypes = {
 };
 
 const StyledWrapper = styled.div`
+  display: flex;
   width: 1200px;
-  height: 1400px;
-  margin: 0 auto;
+  height: 700px;
+  .wordcloud-section {
+    margin: 0 auto;
+  }
 
-  .compare-button {
+  /* .compare-button {
     margin: 10px auto;
     display: flex;
     width: 110px;
@@ -52,5 +51,5 @@ const StyledWrapper = styled.div`
       background-color: #223131;
       transition: background-color 0.24s;
     }
-  }
+  } */
 `;

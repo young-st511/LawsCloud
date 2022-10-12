@@ -7,7 +7,7 @@ const YearSelect = ({year, setYear, firstYear, yearsNumber, size = 100}) => {
 
   const handleClick = ({target}) => {
     if (target.tagName !== "BUTTON") return;
-    setYear(target.value);
+    setYear(Number(target.value));
     target.parentElement.querySelectorAll("#year-button").forEach((elem) => (elem.className = ""));
     target.classList.add("selectedYear");
     console.log(`selected year: ${target.value}년`);
