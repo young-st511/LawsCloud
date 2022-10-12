@@ -4,7 +4,9 @@ import styled from "styled-components";
 import Title from "../components/wordcloud-components/Title";
 import ComparedWordCloudsSection from "./ComparedWordCloudsSection";
 
-function ComparedWordCloudPage({setSearch}) {
+const mockSearch = (keyword) => console.log(keyword);
+
+function ComparedWordCloudPage({setSearch = mockSearch}) {
   return (
     <StyledWrapper>
       <Title />
@@ -14,7 +16,7 @@ function ComparedWordCloudPage({setSearch}) {
 }
 
 ComparedWordCloudPage.propTypes = {
-  setSearch: PropTypes.func.isRequired,
+  setSearch: PropTypes.func,
 };
 
 export default ComparedWordCloudPage;

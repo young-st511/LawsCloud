@@ -5,7 +5,9 @@ import SearchBar from "../components/wordcloud-components/SearchBar(not-use)";
 import WordCloudSection from "../components/wordcloud-components/WordCloudSection";
 import styled from "styled-components";
 
-const WordCloudPage = ({setSearch}) => {
+const mockSearch = (keyword) => console.log(keyword);
+
+const WordCloudPage = ({setSearch = mockSearch}) => {
   return (
     <StyledWrapper>
       <Title />
@@ -21,7 +23,7 @@ const WordCloudPage = ({setSearch}) => {
 export default WordCloudPage;
 
 WordCloudPage.propTypes = {
-  setSearch: PropTypes.func.isRequired,
+  setSearch: PropTypes.func,
 };
 
 const StyledWrapper = styled.div`
