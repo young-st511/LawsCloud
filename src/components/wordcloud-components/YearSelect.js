@@ -16,7 +16,7 @@ const YearSelect = ({year, setYear, firstYear, yearsNumber}) => {
     <StyledWrapper onClick={handleClick}>
       {years.map((elemYear) => (
         <button
-          type='button'
+          type="button"
           value={elemYear}
           id={"year-button"}
           className={year === elemYear ? "year-button selectedYear" : "year-button"}
