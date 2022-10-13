@@ -1,18 +1,18 @@
-import ToggleLike from "./components/ToggleLike";
 import React from "react";
-import Reply from "./components/Reply";
-import GlobalStyle from "./style/GlobalStyles";
-import ReplyList from "./components/ReplyList";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+
+import Bills from "./pages/Bills";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <div className="App">
-        <ToggleLike />
-        <ReplyList />
-        <Reply />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          {/* <Route path="/" element={<Header />}  Header 라우트 */}
+          <Route path="/bills" element={<Bills />} />
+          {/* </Route> */}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
