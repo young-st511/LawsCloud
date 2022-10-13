@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import {StyledToggleButton, StyledcommitteeList} from "./styles/StyledExcelFilterButton";
+import {StyledToggleButton, StyledcommitteeList} from "../style/StyledExcelFilterButton";
 const committeeArray = ["교육위원회", "법제사법위원회", "행정안전위원회", "국토교통위원회", "정무위원회", "국방위원회"];
 
 const ExcelFilterButton = ({setExcelFilter, setPage}) => {
@@ -9,8 +9,8 @@ const ExcelFilterButton = ({setExcelFilter, setPage}) => {
     <>
       <StyledToggleButton onClick={() => setToggle(!toggle)}>▼</StyledToggleButton>
       <StyledcommitteeList toggle={toggle}>
-        {committeeArray.map((d) => (
-          <li>
+        {committeeArray.map((d, idx) => (
+          <li key={idx}>
             <button
               onClick={(d) => {
                 setPage(1);
