@@ -26,7 +26,6 @@ const PageNationSession = ({searchFilter, page, setPage, age = 21}) => {
     setAddPage(parseInt((page - 1) / 10) * 10);
   }, [page, billSize]);
 
-  console.log(billSize, addPage, page, pageArray);
   return (
     <>
       <Nav>

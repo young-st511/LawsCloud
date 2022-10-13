@@ -1,11 +1,24 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
 
 const Title = () => {
+  const navigate = useNavigate();
   return (
     <Header>
-      <h1>Laws Cloud</h1>
-      <img src="/icons/searchIcon.svg" alt="검색" />
+      <h1 onClick={() => navigate("/main")}>Laws Cloud</h1>
+      <img
+        onClick={() =>
+          navigate("/bills", {
+            state: {
+              inputValue: "",
+              age: 21,
+            },
+          })
+        }
+        src="/icons/searchIcon.svg"
+        alt="검색"
+      />
     </Header>
   );
 };
