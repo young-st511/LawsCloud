@@ -27,9 +27,6 @@ function BillsContents({billsInformation}) {
         </BillProcResultArea>
       </BillInformationArea>
       <BillInformationArea>
-        <BillsDetailTitle>
-          <p className="title">제안이유 및 주요내용</p>
-        </BillsDetailTitle>
         <BillsDetail billId={billsInformation.BILL_ID} />
       </BillInformationArea>
     </Container>
@@ -143,14 +140,14 @@ const BillCommittee = styled.div`
   border-color: #888080;
 `;
 
-const BillsDetailTitle = styled(Title)`
-  height: 460px;
+// const BillsDetailTitle = styled(Title)`
+//   height: 460px;
 
-  .title {
-    width: 90px;
-    height: 53px;
-  }
-`;
+//   .title {
+//     width: 90px;
+//     height: 53px;
+//   }
+// `;
 
 const BorderLine = styled.div`
   box-sizing: border-box;

@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import {StyledBillTable, StyledBillThead, StyledBillTbody} from "../style/StyledBillsList";
 import ExcelFilterButton from "./ExcelFilterButton";
+import BillsModal from "./Modal/BillsModal";
 const headerMeta = ["의안명", "제안자", "상임위원회", "조회수", "추천수"];
 
 const BillsList = ({billList, setExcelFilter, setPage}) => {
+  const [onModal, setOnModal] = useState(false);
+  const [billsInformation, setBillsInformation] = useState({});
+
   return (
     <>
       <StyledBillTable>
@@ -20,7 +24,13 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
           {billList ? (
             billList.map((data, idx) => (
               <tr key={idx}>
-                <td>{data.BILL_NAME}</td>
+                <td
+                  onClick={() => {
+                    setOnModal(!onModal);
+                    setBillsInformation(data);
+                  }}>
+                  {data.BILL_NAME}
+                </td>
                 <td>
                   {data.PROPOSER}
                   <div>{data.PROPOSE_DT}</div>
@@ -37,6 +47,8 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
           )}
         </StyledBillTbody>
       </StyledBillTable>
+
+      {onModal && <BillsModal billsInformation={billsInformation} setOnModal={(bool) => setOnModal(bool)} />}
     </>
   );
 };

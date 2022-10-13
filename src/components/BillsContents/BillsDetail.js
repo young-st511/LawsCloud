@@ -3,14 +3,17 @@ import styled from "styled-components";
 
 function BillsDetail({billId}) {
   const url = `https://likms.assembly.go.kr/bill/summaryPopup.do?billId=${billId}`;
+
   return (
     <BillDetailArea>
-      <iframe className="detail" src={url} title="발의안" width="100%" height="100%" scrolling="yes" />
+      <iframe id="iframe" className="detail" src={url} title="발의안" width="100%" height="100%" />
     </BillDetailArea>
   );
 }
 
 const BillDetailArea = styled.div`
+  height: 460px;
+
   display: flex;
   flex: 1;
 
