@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Reply from "./components/Reply";
 
 import Bills from "./pages/Bills";
 
@@ -13,6 +14,7 @@ function App() {
           {/* </Route> */}
         </Routes>
       </BrowserRouter>
+      <Reply />
     </>
   );
 }
