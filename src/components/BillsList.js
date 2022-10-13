@@ -1,6 +1,5 @@
 import React from "react";
-import {StyledBillTable, StyledBillThead, StyledBillTbody} from "./styles/StyledBillsList";
-
+import {StyledBillTable, StyledBillThead, StyledBillTbody} from "../style/StyledBillsList";
 import ExcelFilterButton from "./ExcelFilterButton";
 const headerMeta = ["의안명", "제안자", "상임위원회", "조회수", "추천수"];
 
