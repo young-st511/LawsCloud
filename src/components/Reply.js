@@ -1,14 +1,12 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import {addDoc, collection, serverTimestamp} from "firebase/firestore";
+import {dbService} from "./Firebase/firebase";
+
 export default function Reply() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [content, setContent] = useState("");
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(id, password);
-  };
 
   const onChange = (e) => {
     const {
@@ -21,6 +19,17 @@ export default function Reply() {
     } else if (name === "content") {
       setContent(value);
     }
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await addDoc(collection(dbService, "lawsCloud"), {
+      text: content,
+      createdAt: serverTimestamp(),
+      creatorId: id,
+      password: password,
+    });
+    setPassword(""), setId(""), setContent("");
   };
 
   return (
