@@ -24,32 +24,9 @@ WordCloudPage.propTypes = {
 
 const StyledWrapper = styled.div`
   display: flex;
-  width: 1200px;
+  margin: 0 auto;
   height: 700px;
   .wordcloud-section {
     margin: 0 auto;
   }
-
-  /* .compare-button {
-    margin: 10px auto;
-    display: flex;
-    width: 110px;
-    height: 36px;
-
-    background: #000000;
-    border-radius: 15px;
-    border-style: none;
-
-    font-weight: 600;
-    font-size: 16px;
-    color: #ffffff;
-
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    :hover {
-      background-color: #223131;
-      transition: background-color 0.24s;
-    }
-  } */
 `;
