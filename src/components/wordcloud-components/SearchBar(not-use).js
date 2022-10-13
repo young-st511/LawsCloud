@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const SearchBar = ({search, setSearch}) => {
@@ -17,11 +18,16 @@ const SearchBar = ({search, setSearch}) => {
   return (
     <StyledWrapper search={search}>
       <form onSubmit={handleSubmit}>
-        <input placeholder='검색' onChange={handleChange} value={search} />
-        <input className='searchButton' aria-label='검색' type={"submit"} />
+        <input placeholder="검색" onChange={handleChange} value={search} />
+        <input className="searchButton" aria-label="검색" type={"submit"} />
       </form>
     </StyledWrapper>
   );
+};
+
+SearchBar.propTypes = {
+  search: PropTypes.string,
+  setSearch: PropTypes.func,
 };
 
 export default SearchBar;
