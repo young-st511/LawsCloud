@@ -10,16 +10,22 @@ const agesAndYears = {
   19: {firstYear: 2012, yearsNum: 5},
 };
 
-function WordCloudSection({setSearch, size = 100, elemId = "wordcloud"}) {
+function WordCloudSection({setSearch, setAgeData, size = 100, elemId = "wordcloud"}) {
   const defaultYear = 2022;
   const defaultAge = 21;
   const [year, setYear] = useState(defaultYear);
   const [age, setAge] = useState(defaultAge);
-
   return (
     <div className="wordcloud-section">
       <WordCloud age={age} year={year} setSearch={setSearch} size={size} elemId={elemId} />
-      <AgeSelect age={age} setAge={setAge} setYear={setYear} agesAndYears={agesAndYears} size={size} />
+      <AgeSelect
+        setAgeData={setAgeData}
+        age={age}
+        setAge={setAge}
+        setYear={setYear}
+        agesAndYears={agesAndYears}
+        size={size}
+      />
       <YearSelect
         year={year}
         setYear={setYear}

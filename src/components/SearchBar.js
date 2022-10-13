@@ -7,7 +7,7 @@ const KEY = process.env.REACT_APP_API_KEY;
 const BaseURL = `https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn?KEY=${KEY}&`;
 
 const SearchBar = ({setBillList, searchFilter, setSearchFilter, page, setPage, excelFilter, age = 21}) => {
-  const [searchValue, setSerchValue] = useState("");
+  const [searchValue, setSerchValue] = useState(searchFilter);
 
   useEffect(() => {
     axios({
@@ -28,7 +28,12 @@ const SearchBar = ({setBillList, searchFilter, setSearchFilter, page, setPage, e
   return (
     <>
       <StyledSearchArea>
-        <input placeholder="상품명 검색" onChange={(e) => setSerchValue(e.target.value)} onKeyPress={onCheckEnter} />
+        <input
+          placeholder="상품명 검색"
+          value={searchValue}
+          onChange={(e) => setSerchValue(e.target.value)}
+          onKeyPress={onCheckEnter}
+        />
         <button
           onClick={() => {
             setSearchFilter(searchValue);

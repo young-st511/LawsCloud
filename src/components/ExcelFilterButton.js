@@ -1,7 +1,15 @@
 import React, {useState} from "react";
 
 import {StyledToggleButton, StyledcommitteeList} from "../style/StyledExcelFilterButton";
-const committeeArray = ["교육위원회", "법제사법위원회", "행정안전위원회", "국토교통위원회", "정무위원회", "국방위원회"];
+const committeeArray = [
+  "",
+  "교육위원회",
+  "법제사법위원회",
+  "행정안전위원회",
+  "국토교통위원회",
+  "정무위원회",
+  "국방위원회",
+];
 
 const ExcelFilterButton = ({setExcelFilter, setPage}) => {
   const [toggle, setToggle] = useState(false);
