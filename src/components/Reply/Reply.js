@@ -1,9 +1,12 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {addDoc, collection, serverTimestamp} from "firebase/firestore";
-import {dbService} from "./Firebase/firebase";
+import {dbService} from "../Firebase/firebase";
+import {v4 as uuidv4} from "uuid";
+import axios from "axios";
+import ReplyList from "./ReplyList";
 
-export default function Reply() {
+export default function Reply({billId}) {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [content, setContent] = useState("");
@@ -23,36 +26,43 @@ export default function Reply() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await addDoc(collection(dbService, "lawsCloud"), {
+    const userIpInfo = await axios("https://api.ipify.org/?format=json");
+    const userIp = userIpInfo.data.ip;
+    await addDoc(collection(dbService, `${billId}`), {
       text: content,
       createdAt: serverTimestamp(),
       creatorId: id,
       password: password,
+      ip: userIp,
+      key: uuidv4(),
     });
     setPassword(""), setId(""), setContent("");
   };
 
   return (
-    <ReplyArea onSubmit={onSubmit}>
-      <UserInfoArea>
-        <ReplyId type="text" name="id" placeholder="ID" required value={id} onChange={onChange}></ReplyId>
-        <ReplyPassword
-          type="password"
-          name="password"
-          placeholder="Password"
+    <>
+      <ReplyList />
+      <ReplyArea onSubmit={onSubmit}>
+        <UserInfoArea>
+          <ReplyId type="text" name="id" placeholder="ID" required value={id} onChange={onChange}></ReplyId>
+          <ReplyPassword
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={onChange}></ReplyPassword>
+        </UserInfoArea>
+        <InputReply
+          type="text"
+          name="content"
+          placeholder="이 법안에 대해 어떻게 생각하세요?"
           required
-          value={password}
-          onChange={onChange}></ReplyPassword>
-      </UserInfoArea>
-      <InputReply
-        type="text"
-        name="content"
-        placeholder="이 법안에 대해 어떻게 생각하세요?"
-        required
-        value={content}
-        onChange={onChange}></InputReply>
-      <SubmitButton type="submit" value="작성" />
-    </ReplyArea>
+          value={content}
+          onChange={onChange}></InputReply>
+        <SubmitButton type="submit" value="작성" />
+      </ReplyArea>
+    </>
   );
 }
 
@@ -97,4 +107,5 @@ const SubmitButton = styled.input`
   width: 85px;
   height: 30px;
   color: white;
+  cursor: pointer;
 `;
