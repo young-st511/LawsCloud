@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 
-import {StyledWrap} from "./styles/StyledBills";
+import {StyledWrap} from "../style/StyledBills";
 
-import BillsList from "./BillsList";
-import SearchBar from "./SearchBar";
-import PageNationSession from "./PageNationSession";
+import BillsList from "../components/BillsList";
+import SearchBar from "../components/SearchBar";
+import PageNationSession from "../components/PageNationSession";
 
-const Bills = ({}) => {
+const Bills = () => {
   const [billList, setBillList] = useState("");
   const [page, setPage] = useState(1);
   const [searchFilter, setSearchFilter] = useState("");
