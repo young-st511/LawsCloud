@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {onSnapshot, collection} from "firebase/firestore";
-import {dbService} from "./Firebase/firebase";
+import {dbService} from "../Firebase/firebase";
 
 export default function ReplyList({billId}) {
   const [replysInfo, setReplysInfo] = useState([]);
@@ -44,6 +44,7 @@ const Reply = styled.div`
   padding: 8px 4px 8px 4px;
   display: flex;
   width: 1160px;
+  min-width: 900px;
   justify-content: space-between;
 `;
 

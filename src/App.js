@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Reply from "./components/Reply/Reply";
 
 import Title from "./components/Title";
 import WordCloudPage from "./pages/WordCloudPage";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/bills" element={<Bills />} />
         </Routes>
       </BrowserRouter>
+      <Reply />
     </>
   );
 }
