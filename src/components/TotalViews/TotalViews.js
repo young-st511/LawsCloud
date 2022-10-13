@@ -11,7 +11,6 @@ function TotalViews({billsId}) {
   useEffect(() => {
     const getcount = async (docRef) => {
       const docSnap = await getDoc(docRef);
-      setViewCount(docSnap.data().count);
       if (docSnap.data() === undefined) {
         setDoc(doc(db, `${billsId}`, "viewCount"), {
           count: 1,
@@ -21,6 +20,7 @@ function TotalViews({billsId}) {
         setDoc(doc(db, `${billsId}`, "viewCount"), {
           count: docSnap.data().count + 1,
         });
+        setViewCount(docSnap.data().count);
       }
     };
     const docRef = doc(db, `${billsId}`, "viewCount");
