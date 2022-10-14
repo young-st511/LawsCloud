@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+// import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
 import AgeSelect from "./AgeSelect";
 import WordCloud from "./WordCloud";
@@ -11,6 +12,7 @@ const agesAndYears = {
 };
 
 function WordCloudSection({setSearch, setAgeData, size = 100, elemId = "wordcloud"}) {
+  // const navigate = useNavigate();
   const defaultYear = 2022;
   const defaultAge = 21;
   const [year, setYear] = useState(defaultYear);

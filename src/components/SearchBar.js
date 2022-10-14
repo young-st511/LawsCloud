@@ -5,17 +5,18 @@ import {StyledSearchArea} from "../style/StyledSearchBar";
 const KEY = process.env.REACT_APP_API_KEY;
 const BaseURL = `https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn?KEY=${KEY}&`;
 
-const SearchBar = ({setBillList, searchFilter, setSearchFilter, page, setPage, excelFilter, age = 21}) => {
+const SearchBar = ({setBillList, searchFilter, setSearchFilter, page, setPage, excelFilter, setCategory, category}) => {
   const [searchValue, setSerchValue] = useState(searchFilter);
 
   useEffect(() => {
+    console.log(category);
     axios({
       method: "GET",
-      url: `${BaseURL}AGE=${age}&Type=json&pIndex=${page}&pSize=7&BILL_NAME=${searchFilter}&COMMITTEE=${excelFilter}`,
+      url: `${BaseURL}AGE=${category}&Type=json&pIndex=${page}&pSize=7&BILL_NAME=${searchFilter}&COMMITTEE=${excelFilter}`,
     })
       .then((res) => setBillList(res.data.nzmimeepazxkubdpn[1].row))
       .catch((error) => alert(`검색 결과가 없습니다.\n${error}`));
-  }, [searchFilter, page, excelFilter]);
+  }, [searchFilter, page, excelFilter, category]);
 
   const onCheckEnter = (e) => {
     if (e.key === "Enter") {
@@ -23,10 +24,19 @@ const SearchBar = ({setBillList, searchFilter, setSearchFilter, page, setPage, e
       setSearchFilter(searchValue);
     }
   };
-
   return (
     <>
       <StyledSearchArea>
+        <select
+          value={category}
+          onChange={(e) => {
+            setPage(1);
+            setCategory(e.target.value);
+          }}>
+          <option value="19">19대</option>
+          <option value="20">20대</option>
+          <option value="21">21대</option>
+        </select>
         <input
           placeholder="상품명 검색"
           value={searchValue}

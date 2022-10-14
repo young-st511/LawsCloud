@@ -1,26 +1,23 @@
-import React, {useState} from "react";
+import React from "react";
 import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import ComparedWordCloudsSection from "../components/wordcloud-components/ComparedWordCloudsSection";
 
 function ComparedWordCloudPage() {
-  const [ageData, setAgeData] = useState(21);
   const navigate = useNavigate();
 
-  const setSearch = (keyword) => {
-    console.log(keyword, ageData);
-    navigate("/compare");
-    // navigate("/bills", {
-    //   state: {
-    //     inputValue: keyword,
-    //     age: ageData,
-    //   },
-    // });
+  const setSearch = (data) => {
+    navigate("/bills", {
+      state: {
+        inputValue: data.name,
+        age: data.age,
+      },
+    });
   };
   return (
     <StyledWrapper>
-      <ComparedWordCloudsSection setSearch={setSearch} setAgeData={setAgeData} compareNumber={3} cloudSize={60} />
+      <ComparedWordCloudsSection setSearch={setSearch} compareNumber={3} cloudSize={60} />
     </StyledWrapper>
   );
 }

@@ -23,6 +23,18 @@ export const StyledSearchArea = styled.div`
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
   }
+
+  select {
+    width: min(10vw, 100px);
+    height: 4vh;
+    font-size: 15px;
+    background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png")
+      calc(100% - 5px) center no-repeat;
+    background-size: 20px;
+    border: 0;
+    outline: 0 none;
+    margin-left: 20px;
+  }
   button {
     height: 4vh;
     margin-right: 8px;

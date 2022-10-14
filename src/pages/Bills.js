@@ -18,6 +18,7 @@ const Bills = () => {
   const [page, setPage] = useState(1);
   const [searchFilter, setSearchFilter] = useState(location.state.inputValue);
   const [excelFilter, setExcelFilter] = useState("");
+  const [category, setCategory] = useState(String(location.state.age));
 
   return (
     <StyledWrap>
@@ -29,12 +30,13 @@ const Bills = () => {
           page={page}
           setPage={setPage}
           excelFilter={excelFilter}
-          age={location.state.age}
+          category={category}
+          setCategory={setCategory}
         />
         <BillsList billList={billList} setExcelFilter={setExcelFilter} setPage={setPage} />
       </main>
       <footer>
-        <PageNationSession page={page} searchFilter={searchFilter} setPage={setPage} />
+        <PageNationSession page={page} searchFilter={searchFilter} setPage={setPage} category={category} />
       </footer>
     </StyledWrap>
   );

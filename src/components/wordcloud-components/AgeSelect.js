@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const AgeSelect = ({setAgeData, age, setAge, setYear, agesAndYears, size = 100}) => {
+const AgeSelect = ({age, setAge, setYear, agesAndYears, size = 100}) => {
   const handleChange = ({target: {value}}) => {
     setAge(Number(value));
-    setAgeData(Number(value));
     setYear(Number(agesAndYears[value].firstYear));
     console.log(`now age: ${value} 대`);
   };

@@ -7,7 +7,7 @@ import cloudNouns from "../../wordcloud_data/cloudNouns/cloud-nouns.json";
 function Cloud({age, year, elemId, setSearch, size = 100}) {
   useEffect(() => {
     if (!WordCloud.isSupported) return;
-    drawCloud(cloudNouns[age + "-" + year], elemId, setSearch, size);
+    drawCloud(cloudNouns[age + "-" + year], elemId, setSearch, size, age);
   }, [age, year, elemId, setSearch, size]);
 
   // wordcloud 지원 하지 않는 브라우저 처리
@@ -20,7 +20,7 @@ function Cloud({age, year, elemId, setSearch, size = 100}) {
   // console.log(WordCloud.isSupported, WordCloud.miniumFontSize);
 }
 
-function drawCloud(words, elemId, setSearch, size) {
+function drawCloud(words, elemId, setSearch, size, age) {
   const cloudSize = size / 100;
   WordCloud(document.getElementById(elemId), {
     list: words,
@@ -33,7 +33,10 @@ function drawCloud(words, elemId, setSearch, size) {
     weightFactor: (words[0][1] < 20 ? 3 : 0.3) * cloudSize,
     minRotation: 0,
     maxRotation: 0,
-    click: (item) => setSearch(item[0]),
+    age: age,
+    click: (item) => {
+      setSearch({name: item[0], age: age});
+    },
   });
 }
 
