@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 function BillsDetail({billId}) {
   const url = `https://likms.assembly.go.kr/bill/summaryPopup.do?billId=${billId}`;
@@ -10,6 +11,10 @@ function BillsDetail({billId}) {
     </BillDetailArea>
   );
 }
+
+BillsDetail.proptype = {
+  billId: PropTypes.string.isRequired,
+};
 
 const BillDetailArea = styled.div`
   height: 460px;

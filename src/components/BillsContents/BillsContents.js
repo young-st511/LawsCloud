@@ -1,6 +1,7 @@
 import React from "react";
 import BillsDetail from "./BillsDetail";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 function BillsContents({billsInformation}) {
   return (
@@ -32,6 +33,18 @@ function BillsContents({billsInformation}) {
     </Container>
   );
 }
+
+BillsContents.propTypes = {
+  billsInformation: PropTypes.shape({
+    BILL_NAME: PropTypes.string,
+    PROPOSER: PropTypes.string,
+    BILL_NO: PropTypes.string,
+    PROC_RESULT: PropTypes.string,
+    PROPESE_DT: PropTypes.string,
+    COMMITTEE: PropTypes.string,
+    BILL_ID: PropTypes.string,
+  }),
+};
 
 const Container = styled.div`
   * {
@@ -139,15 +152,6 @@ const BillCommittee = styled.div`
   border-width: 0 1px 1px 0;
   border-color: #888080;
 `;
-
-// const BillsDetailTitle = styled(Title)`
-//   height: 460px;
-
-//   .title {
-//     width: 90px;
-//     height: 53px;
-//   }
-// `;
 
 const BorderLine = styled.div`
   box-sizing: border-box;
