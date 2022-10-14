@@ -6,7 +6,9 @@ const Title = () => {
   const navigate = useNavigate();
   return (
     <Header>
-      <h1 onClick={() => navigate("/main")}>Laws Cloud</h1>
+      <h1 onClick={() => navigate("/main")} style={{cursor: "pointer"}}>
+        Laws Cloud
+      </h1>
       <img
         onClick={() =>
           navigate("/bills", {
@@ -18,6 +20,7 @@ const Title = () => {
         }
         src="/icons/searchIcon.svg"
         alt="검색"
+        style={{cursor: "pointer"}}
       />
     </Header>
   );
