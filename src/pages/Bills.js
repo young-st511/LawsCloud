@@ -8,7 +8,12 @@ import PageNationSession from "../components/PageNationSession";
 
 const Bills = () => {
   const location = useLocation();
-
+  if (!location.state) {
+    location.state = {
+      inputValue: "",
+      age: 21,
+    };
+  }
   const [billList, setBillList] = useState("");
   const [page, setPage] = useState(1);
   const [searchFilter, setSearchFilter] = useState(location.state.inputValue);

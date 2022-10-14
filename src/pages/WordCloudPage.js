@@ -5,7 +5,7 @@ import WordCloudSection from "../components/wordcloud-components/WordCloudSectio
 import styled from "styled-components";
 
 const WordCloudPage = () => {
-  const [ageData, setAgeData] = useState(0);
+  const [ageData, setAgeData] = useState(21);
   const navigate = useNavigate();
 
   const setSearch = (keyword) => {
