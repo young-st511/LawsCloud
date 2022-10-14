@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {onSnapshot, collection} from "firebase/firestore";
 import {dbService} from "../Firebase/firebase";
+import ReplyDelete from "./ReplyDelete";
 
 export default function ReplyList({billId}) {
   const [replysInfo, setReplysInfo] = useState([]);
@@ -16,13 +17,6 @@ export default function ReplyList({billId}) {
     });
   }, []);
 
-  const onDeleteClick = async (data) => {
-    const ok = window.confirm("진짜로 삭제합니까?");
-    if (ok) {
-      await deleteDoc(doc(dbService, `${billId}`, `${data}`));
-    }
-  };
-
   const Replys = replysInfo.map((data) => {
     return (
       <Reply key={data.key}>
@@ -30,10 +24,7 @@ export default function ReplyList({billId}) {
           {data.creatorId}({data.ip})
         </span>
         <ReplyText>{data.text}</ReplyText>
-        <span id={data.key} onClick={onDeleteClick}>
-          {/* {data.createdAt}{" "} */}
-          <DeleteButton src="/icons/close.png" alt="delete" />
-        </span>
+        <ReplyDelete data={data} id={billId} />
       </Reply>
     );
   });
@@ -51,11 +42,4 @@ const Reply = styled.div`
 
 const ReplyText = styled.div`
   width: 820px;
-`;
-
-const DeleteButton = styled.img`
-  width: 12px;
-  height: 12px;
-  padding: 2px;
-  cursor: pointer;
 `;
