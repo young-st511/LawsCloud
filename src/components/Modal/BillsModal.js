@@ -9,7 +9,7 @@ function BillsModal({billsInformation, setOnModal}) {
     <ModalFrame setOnModal={setOnModal}>
       <BillsContents billsInformation={billsInformation} />
 
-      <Reply />
+      <Reply billId={billsInformation.BILL_ID} />
     </ModalFrame>
   );
 }

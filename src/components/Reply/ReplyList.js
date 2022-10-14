@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import {onSnapshot, collection, deleteDoc, doc} from "firebase/firestore";
+import {onSnapshot, collection} from "firebase/firestore";
 import {dbService} from "../Firebase/firebase";
 
 export default function ReplyList({billId}) {
@@ -30,9 +30,9 @@ export default function ReplyList({billId}) {
           {data.creatorId}({data.ip})
         </span>
         <ReplyText>{data.text}</ReplyText>
-        <span>
+        <span id={data.key} onClick={onDeleteClick}>
           {/* {data.createdAt}{" "} */}
-          <DeleteButton src="/icons/close.png" alt="delete" onClick={onDeleteClick(data)} />
+          <DeleteButton src="/icons/close.png" alt="delete" />
         </span>
       </Reply>
     );
@@ -53,7 +53,7 @@ const ReplyText = styled.div`
   width: 820px;
 `;
 
-const DeleteButton = styled.div`
+const DeleteButton = styled.img`
   width: 12px;
   height: 12px;
   padding: 2px;
