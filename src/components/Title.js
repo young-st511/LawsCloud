@@ -27,14 +27,13 @@ export default Title;
 
 const Header = styled.header`
   display: flex;
-  width: 1200px;
   height: 90px;
-  margin: 0 auto;
+  // margin: 0 auto;
   position: relative;
-  text-align: center;
   align-items: center;
+  justify-content: center;
   h1 {
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 0;
     text-align: center;
     font-weight: 800;
