@@ -21,16 +21,15 @@ function Cloud({age, year, elemId, setSearch, size = 100}) {
 }
 
 function drawCloud(words, elemId, setSearch, size, age) {
-  const cloudSize = size / 100;
   WordCloud(document.getElementById(elemId), {
     list: words,
     shape: "circle",
     fontFamily: "SUIT",
     fontWeight: 700,
     classes: "cloud-word",
-    gridSize: (words[0][1] < 20 ? 23 : 18) * cloudSize,
+    gridSize: words[0][1] < 20 ? 23 : 18,
     minSize: words[0][1] < 20 ? 5 : 8,
-    weightFactor: (words[0][1] < 20 ? 3 : 0.3) * cloudSize,
+    weightFactor: (words[0][1] < 20 ? 3 : 0.3) * (size / 100),
     minRotation: 0,
     maxRotation: 0,
     age: age,
