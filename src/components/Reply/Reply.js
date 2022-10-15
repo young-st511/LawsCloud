@@ -89,7 +89,10 @@ const UserInfoArea = styled.div`
 `;
 
 const ReplyArea = styled.form`
+  box-sizing: border-box;
   display: flex;
+  align-items: center;
+  justify-content: center;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   backgroung-color: gray;

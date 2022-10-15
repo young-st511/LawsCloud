@@ -6,14 +6,19 @@ import Reply from "../Reply/Reply";
 import PropTypes from "prop-types";
 
 import TotalViews from "../TotalViews/TotalViews";
-import styled from "styled-components";
+import TotalComments from "../TotalComments/TotalComments";
+import {ToggleArea} from "../../style/StyledModal";
 
 function BillsModal({billsInformation, setOnModal}) {
   return (
     <ModalFrame setOnModal={setOnModal}>
       <BillsContents billsInformation={billsInformation} />
       <ToggleArea>
-        <TotalViews billsId={billsInformation.BILL_ID} />
+        <p>
+          댓글 <TotalComments billId={billsInformation.BILL_ID} />
+          <span className="arrow" />
+        </p>
+        <TotalViews billId={billsInformation.BILL_ID} />
       </ToggleArea>
       <Reply billId={billsInformation.BILL_ID} />
     </ModalFrame>
@@ -32,11 +37,5 @@ BillsModal.propTypes = {
   }),
   setOnModal: PropTypes.func,
 };
-
-const ToggleArea = styled.div`
-  display: flex;
-  margin-top: 30px;
-  margin-left: 40px;
-`;
 
 export default BillsModal;

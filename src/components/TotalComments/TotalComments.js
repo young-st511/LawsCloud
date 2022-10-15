@@ -1,20 +1,19 @@
 import React, {useState, useEffect} from "react";
 
 // getFirestore
-import db from "../../firebase";
-
-import {onSnapshot, collection} from "@firebase/firestore";
+import {onSnapshot, collection} from "firebase/firestore";
+import {dbService} from "../Firebase/firebase";
 
 function TotalComments({billId}) {
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
   useEffect(() => {
-    onSnapshot(collection(db, `${billId}/comments/comment`), (snapshot) => {
+    onSnapshot(collection(dbService, `${billId}`), (snapshot) => {
       const realtimeComments = snapshot.docs.map((doc) => doc.data());
       setTotalCommentsCount(realtimeComments.length);
     });
   });
 
-  return <div>{totalCommentsCount}</div>;
+  return <>{totalCommentsCount}</>;
 }
 
 export default TotalComments;
