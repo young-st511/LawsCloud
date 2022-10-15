@@ -33,7 +33,8 @@ export default function ReplyList({billId}) {
 }
 
 const Reply = styled.div`
-  padding: 8px 4px 8px 4px;
+  padding: 8px 0;
+  margin: auto;
   display: flex;
   width: 1160px;
   min-width: 900px;
