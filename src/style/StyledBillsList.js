@@ -44,9 +44,4 @@ export const StyledBillTbody = styled.tbody`
   td:nth-child(1) {
     text-align: left;
   }
-  td:nth-child(4) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 `;
