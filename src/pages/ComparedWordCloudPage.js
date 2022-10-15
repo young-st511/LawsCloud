@@ -39,12 +39,16 @@ const StyledWrapper = styled.div`
     padding: 50px 10px;
     margin: 0 auto;
 
-    .wordcloud {
-      box-sizing: content-box;
-      padding: 45px 30px;
-      border: 1px solid #e6e6e6;
+    .wordcloud-back {
+      box-sizing: border-box;
+      margin: 45px 30px;
       box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25), inset 12px 12px 20px rgba(255, 255, 255, 0.25);
+      border: 1px solid #e6e6e6;
       border-radius: 15px;
+      .wordcloud {
+        padding: 15px 5px;
+        box-sizing: content-box;
+      }
     }
   }
 `;
