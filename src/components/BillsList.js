@@ -22,6 +22,7 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
     set(firebaseRef, {
       name: data.BILL_NAME,
       count: viewCount + 1,
+      likeCount: 0,
     });
 
     setViewCount(0);
