@@ -38,7 +38,7 @@ const SearchBar = ({setBillList, searchFilter, setSearchFilter, page, setPage, e
           <option value="21">21대</option>
         </select>
         <input
-          placeholder="상품명 검색"
+          placeholder="의안명 검색"
           value={searchValue}
           onChange={(e) => setSerchValue(e.target.value)}
           onKeyPress={onCheckEnter}
