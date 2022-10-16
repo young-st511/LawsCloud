@@ -23,7 +23,7 @@ function BillsModal({billsInformation, setOnModal}) {
         <ViewIcon width={23} height={20}>
           <label title="조회수" />
         </ViewIcon>
-        <TotalViews billId={billsInformation.BILL_ID} billsListPage={false} />
+        <TotalViews billId={billsInformation.BILL_ID} />
       </ToggleArea>
       <Reply billId={billsInformation.BILL_ID} />
     </ModalFrame>
