@@ -9,16 +9,17 @@ export const Nav = styled.nav`
 `;
 
 export const Button = styled.button`
-  border: none;
+  width: 40px;
+  border: 1px solid gray;
   border-radius: 8px;
   padding: 8px;
   margin: 0;
-  background: black;
-  color: white;
+  // background: black;
+  color: black;
   font-size: 1rem;
 
   &:hover {
-    background: tomato;
+    background: #ddf584;
     cursor: pointer;
     transform: translateY(-2px);
   }
@@ -30,7 +31,7 @@ export const Button = styled.button`
   }
 
   &[aria-current] {
-    background: deeppink;
+    background: #81c147;
     font-weight: bold;
     cursor: revert;
     transform: revert;

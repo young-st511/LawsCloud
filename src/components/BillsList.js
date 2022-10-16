@@ -13,35 +13,33 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
     <>
       <StyledBillTable>
         <StyledBillThead>
-          <tr>
-            {headerMeta.map((data, idx) => (
-              <th key={idx}>
-                {data} {idx === 2 && <ExcelFilterButton setExcelFilter={setExcelFilter} setPage={setPage} />}
-              </th>
-            ))}
-          </tr>
+          {headerMeta.map((data, idx) => (
+            <div key={idx} className="header">
+              {data} {idx === 2 && <ExcelFilterButton setExcelFilter={setExcelFilter} setPage={setPage} />}
+            </div>
+          ))}
         </StyledBillThead>
         <StyledBillTbody>
           {billList ? (
             billList.map((data, idx) => (
-              <tr key={idx}>
-                <td
+              <div key={idx} className="item-area">
+                <div
+                  className="item"
                   onClick={() => {
                     setOnModal(!onModal);
                     setBillsInformation(data);
                   }}>
                   {data.BILL_NAME}
-                </td>
-                <td>
+                </div>
+                <div className="item">
                   {data.PROPOSER}
-                  <div>{data.PROPOSE_DT}</div>
-                </td>
-                <td>({data.COMMITTEE})</td>
-                <td>
-                  <TotalViews billId={data.BILL_ID} billsListPage={true} />
-                </td>
-                <td>0</td>
-              </tr>
+                  <br />
+                  {data.PROPOSE_DT}
+                </div>
+                <div className="item">({data.COMMITTEE ? data.COMMITTEE : "소속 없음"})</div>
+                <TotalViews billId={data.BILL_ID} billsListPage={true} />
+                <div className="item">0</div>
+              </div>
             ))
           ) : (
             <tr>
