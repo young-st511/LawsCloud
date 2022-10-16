@@ -5,7 +5,7 @@ import Cloud from "./Cloud";
 
 const WordCloud = ({age, year, setSearch, size = 100, elemId}) => {
   return (
-    <StyledWrapper size={size}>
+    <StyledWrapper size={size} className="wordcloud-back">
       <div id={elemId} className="wordcloud">
         <Cloud age={age} year={year} elemId={elemId} setSearch={setSearch} size={Number(size)} />
       </div>

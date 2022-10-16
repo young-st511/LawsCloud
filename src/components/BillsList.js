@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {StyledBillTable, StyledBillThead, StyledBillTbody} from "../style/StyledBillsList";
 import ExcelFilterButton from "./ExcelFilterButton";
 import BillsModal from "./Modal/BillsModal";
+import TotalViews from "./TotalViews/TotalViews";
 const headerMeta = ["의안명", "제안자", "상임위원회", "조회수", "추천수"];
 
 const BillsList = ({billList, setExcelFilter, setPage}) => {
@@ -36,7 +37,7 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
                   {data.PROPOSE_DT}
                 </div>
                 <div className="item">({data.COMMITTEE ? data.COMMITTEE : "소속 없음"})</div>
-                <div className="item">0</div>
+                <TotalViews billId={data.BILL_ID} billsListPage={true} />
                 <div className="item">0</div>
               </div>
             ))

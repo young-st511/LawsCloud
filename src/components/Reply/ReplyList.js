@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {onSnapshot, collection} from "firebase/firestore";
 import {dbService} from "../Firebase/firebase";
+import ReplyDelete from "./ReplyDelete";
 
 export default function ReplyList({billId}) {
   const [replysInfo, setReplysInfo] = useState([]);
@@ -16,8 +17,6 @@ export default function ReplyList({billId}) {
     });
   }, []);
 
-  console.log(replysInfo.createdAt);
-
   const Replys = replysInfo.map((data) => {
     return (
       <Reply key={data.key}>
@@ -25,14 +24,7 @@ export default function ReplyList({billId}) {
           {data.creatorId}({data.ip})
         </span>
         <ReplyText>{data.text}</ReplyText>
-        <span>
-          {/* {data.createdAt}{" "} */}
-          <img
-            src="/icons/close.png"
-            alt="delete"
-            style={{width: "12px", height: "12px", padding: "2px", cursor: "pointer"}}
-          />
-        </span>
+        <ReplyDelete data={data} id={billId} />
       </Reply>
     );
   });
@@ -41,7 +33,8 @@ export default function ReplyList({billId}) {
 }
 
 const Reply = styled.div`
-  padding: 8px 4px 8px 4px;
+  padding: 8px 0;
+  margin: auto;
   display: flex;
   width: 1160px;
   min-width: 900px;

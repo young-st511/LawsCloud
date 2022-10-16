@@ -6,7 +6,9 @@ const Title = () => {
   const navigate = useNavigate();
   return (
     <Header>
-      <h1 onClick={() => navigate("/main")}>Laws Cloud</h1>
+      <h1 onClick={() => navigate("/main")} style={{cursor: "pointer"}}>
+        Laws Cloud
+      </h1>
       <img
         onClick={() =>
           navigate("/bills", {
@@ -18,6 +20,7 @@ const Title = () => {
         }
         src="/icons/searchIcon.svg"
         alt="검색"
+        style={{cursor: "pointer"}}
       />
     </Header>
   );
@@ -26,22 +29,25 @@ const Title = () => {
 export default Title;
 
 const Header = styled.header`
+  --title-between: 200px;
+  min-width: 700px;
+
   display: flex;
+  /* display: flex; */
   height: 90px;
   // margin: 0 auto;
   position: relative;
   align-items: center;
   justify-content: center;
+
   h1 {
     // margin: 0 auto;
-    padding: 0;
+    margin-left: calc(62px + var(--title-between));
     text-align: center;
     font-weight: 800;
   }
   img {
-    /* margin: 10px; */
+    margin-left: var(--title-between);
     height: 25px;
-    position: absolute;
-    right: 320px;
   }
 `;

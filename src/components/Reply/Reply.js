@@ -41,7 +41,7 @@ export default function Reply({billId}) {
 
   return (
     <>
-      <ReplyList />
+      <ReplyList billId={billId} />
       <ReplyArea onSubmit={onSubmit}>
         <UserInfoArea>
           <ReplyId type="text" name="id" placeholder="ID" required value={id} onChange={onChange}></ReplyId>
@@ -89,7 +89,10 @@ const UserInfoArea = styled.div`
 `;
 
 const ReplyArea = styled.form`
+  box-sizing: border-box;
   display: flex;
+  align-items: center;
+  justify-content: center;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   backgroung-color: gray;
@@ -104,7 +107,7 @@ const SubmitButton = styled.input`
   background-color: black;
   position: absolute;
   bottom: 2px;
-  right: 4px;
+  right: 16px;
   width: 85px;
   height: 30px;
   color: white;

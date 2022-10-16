@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import PropTypes from "prop-types";
+import {BillDetailArea} from "../../style/StyledModal";
 
 function BillsDetail({billId}) {
   const url = `https://likms.assembly.go.kr/bill/summaryPopup.do?billId=${billId}`;
@@ -11,19 +12,8 @@ function BillsDetail({billId}) {
   );
 }
 
-const BillDetailArea = styled.div`
-  height: 460px;
-
-  display: flex;
-  flex: 1;
-
-  border: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #888080;
-
-  .detail {
-    border: none;
-  }
-`;
+BillsDetail.proptype = {
+  billId: PropTypes.string.isRequired,
+};
 
 export default BillsDetail;
