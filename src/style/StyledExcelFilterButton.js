@@ -17,6 +17,7 @@ export const StyledcommitteeList = styled.ul`
   border: 1px solid gray;
   padding: 5px;
   background: #d3d3d3;
+  z-index:9999;
   button {
     width: 100%;
     height: 50px;
