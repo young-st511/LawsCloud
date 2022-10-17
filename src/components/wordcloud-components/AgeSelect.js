@@ -8,14 +8,22 @@ const AgeSelect = ({age, setAge, setYear, agesAndYears, size = 100}) => {
     setYear(Number(agesAndYears[value].firstYear));
     console.log(`now age: ${value} 대`);
   };
+  const ages = [];
+  for (const key in agesAndYears) {
+    if (Object.hasOwnProperty.call(agesAndYears, key)) {
+      ages.push(key);
+    }
+  }
 
   return (
     <StyledWrapper className="age-select" size={size}>
       <div className="text">제</div>
       <select value={age} onChange={handleChange}>
-        <option value={19}>19</option>
-        <option value={20}>20</option>
-        <option value={21}>21</option>
+        {ages.map((elem) => (
+          <option value={elem} key={`${elem}th`}>
+            {elem}
+          </option>
+        ))}
       </select>
       <div>대 국회의원들의 생각은?</div>
     </StyledWrapper>

@@ -9,6 +9,9 @@ const agesAndYears = {
   21: {firstYear: 2020, yearsNum: 3},
   20: {firstYear: 2016, yearsNum: 5},
   19: {firstYear: 2012, yearsNum: 5},
+  18: {firstYear: 2008, yearsNum: 5},
+  17: {firstYear: 2004, yearsNum: 5},
+  16: {firstYear: 2000, yearsNum: 5},
 };
 
 function WordCloudSection({setSearch, setAgeData, size = 100, elemId = "wordcloud"}) {
