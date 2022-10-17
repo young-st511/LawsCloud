@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import WordCloud from "wordcloud";
-import cloudNouns from "../../wordcloud_data/cloudNouns/cloud-nouns.json";
+import cloudNouns from "../../wordcloud_data/cloudNouns/cloud-nouns-21th.json";
 
 function Cloud({age, year, elemId, setSearch, size = 100}) {
   useEffect(() => {
@@ -29,7 +29,7 @@ function drawCloud(words, elemId, setSearch, size, age) {
     classes: "cloud-word",
     gridSize: words[0][1] < 20 ? 23 : 18,
     minSize: words[0][1] < 20 ? 5 : 8,
-    weightFactor: (words[0][1] < 20 ? 3 : 0.3) * (size / 100),
+    weightFactor: (words[0][1] <= 120 ? 40 / words[0][1] : 0.3) * (size / 100),
     minRotation: 0,
     maxRotation: 0,
     age: age,

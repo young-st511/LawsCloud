@@ -1,9 +1,9 @@
-import { appendFileSync } from 'fs';
-import axios from 'axios';
+import {appendFileSync} from "fs";
+import axios from "axios";
 
-getBillsData(19);
-getBillsData(20);
-getBillsData(21);
+getBillsData(16);
+getBillsData(17);
+getBillsData(18);
 
 //! Test
 // const count = {
@@ -15,13 +15,13 @@ getBillsData(21);
 async function fetchData(age = 21, page = 1) {
   let data = await axios
     .get(
-      `https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn?KEY=138ed104529d44a9ab8575f3f5332436&Type=JSON&AGE=${age}&pSize=1000&pIndex=${page}`
+      `https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn?KEY=138ed104529d44a9ab8575f3f5332436&Type=JSON&AGE=${age}&pSize=1000&pIndex=${page}`,
     )
     .then((res) => {
       let data = res.data.nzmimeepazxkubdpn[1].row;
       return data;
     })
-    .catch((err) => console.error('호출 fail -', err.name));
+    .catch((err) => console.error("호출 fail -", err.name));
 
   return data;
 }
@@ -40,14 +40,10 @@ function getBillsData(age = 21, page = 1) {
       //! Test
       // count[age]++;
 
-      appendFileSync(
-        `./wordcloud/${age}th-${date.slice(0, 4)}.txt`,
-        billName.replace('일부개정법률안', '') + ' ',
-        'utf8'
-      );
+      appendFileSync(`./${age}th-${date.slice(0, 4)}.txt`, billName.replace("일부개정법률안", "") + " ", "utf8");
     });
 
-    console.log('Age: ' + age + '/ Page:' + page);
+    console.log("Age: " + age + "/ Page:" + page);
 
     getBillsData(age, page + 1);
   });
