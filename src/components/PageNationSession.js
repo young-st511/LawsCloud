@@ -26,7 +26,6 @@ const PageNationSession = ({searchFilter, page, setPage, category}) => {
     setAddPage(parseInt((page - 1) / 10) * 10);
   }, [page, billSize]);
 
-  console.log(Math.ceil(billSize / 10), Math.ceil(page / 10), billSize);
   return (
     <>
       <Nav>
