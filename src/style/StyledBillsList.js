@@ -56,6 +56,7 @@ export const StyledBillTbody = styled.div`
     justify-content: start;
     width: min(40%, 480px);
     padding-left: 10px;
+    cursor: pointer;
   }
 
   .item:nth-child(2),

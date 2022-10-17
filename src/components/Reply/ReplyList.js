@@ -36,11 +36,10 @@ const Reply = styled.div`
   padding: 8px 0;
   margin: auto;
   display: flex;
-  width: 1160px;
-  min-width: 900px;
+  width: min(100%, 1160px);
   justify-content: space-between;
 `;
 
 const ReplyText = styled.div`
-  width: 820px;
+  width: min(100%, 820px);
 `;
