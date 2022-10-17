@@ -62,7 +62,7 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
                 </div>
                 <div className="item">({data.COMMITTEE ? data.COMMITTEE : "소속 없음"})</div>
                 <TotalViews billId={data.BILL_ID} />
-                <div className="item">0</div>
+                <LikeNum billId={data.BILL_ID} />
               </div>
             ))
           ) : (
