@@ -29,25 +29,23 @@ const Title = () => {
 export default Title;
 
 const Header = styled.header`
-  --title-between: 200px;
-  min-width: 700px;
-
+  /* --title-between: 200px; */
+  min-width: 320px;
   display: flex;
-  /* display: flex; */
-  height: 90px;
-  // margin: 0 auto;
+  height: 70px;
   position: relative;
   align-items: center;
   justify-content: center;
 
   h1 {
-    // margin: 0 auto;
-    margin-left: calc(62px + var(--title-between));
+    /* margin-left: calc(62px + var(--title-between)); */
     text-align: center;
     font-weight: 800;
   }
   img {
-    margin-left: var(--title-between);
+    /* margin-left: var(--title-between); */
+    position: absolute;
+    margin-left: min(calc(200px + 25vw), 500px);
     height: 25px;
   }
 `;
