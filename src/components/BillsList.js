@@ -3,7 +3,7 @@ import {StyledBillTable, StyledBillThead, StyledBillTbody} from "../style/Styled
 import ExcelFilterButton from "./ExcelFilterButton";
 import BillsModal from "./Modal/BillsModal";
 import TotalViews from "./TotalViews/TotalViews";
-import {set, ref, onValue} from "firebase/database";
+import {set, ref, get, child, update} from "firebase/database";
 import {firebasedatabase} from "./Firebase/firebase";
 const headerMeta = ["의안명", "제안자", "상임위원회", "조회수", "추천수"];
 
@@ -15,14 +15,18 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
   const setView = (data) => {
     const firebaseRef = ref(firebasedatabase, "billId/" + data.BILL_ID);
 
-    onValue(firebaseRef, (snapshot) => {
-      setViewCount(snapshot.val().count);
-    });
-
-    set(firebaseRef, {
-      name: data.BILL_NAME,
-      count: viewCount + 1,
-      likeCount: 0,
+    get(child(ref(firebasedatabase), "billId/" + data.BILL_ID)).then((snapshot) => {
+      if (snapshot.exists()) {
+        update(ref(firebasedatabase, `billId/${data.BILL_ID}`), {
+          count: snapshot.val().count + 1,
+        });
+      } else {
+        set(firebaseRef, {
+          name: data.BILL_NAME,
+          count: viewCount + 1,
+          likeCount: 0,
+        });
+      }
     });
 
     setViewCount(0);

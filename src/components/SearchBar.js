@@ -9,7 +9,6 @@ const SearchBar = ({setBillList, searchFilter, setSearchFilter, page, setPage, e
   const [searchValue, setSerchValue] = useState(searchFilter);
 
   useEffect(() => {
-    console.log(category);
     axios({
       method: "GET",
       url: `${BaseURL}AGE=${category}&Type=json&pIndex=${page}&pSize=7&BILL_NAME=${searchFilter}&COMMITTEE=${excelFilter}`,
