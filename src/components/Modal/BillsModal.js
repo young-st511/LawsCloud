@@ -20,10 +20,12 @@ function BillsModal({billsInformation, setOnModal}) {
           댓글 <TotalComments billId={billsInformation.BILL_ID} />
           <span className="arrow" />
         </p>
-        <ViewIcon width={23} height={20}>
-          <label title="조회수" />
-        </ViewIcon>
-        <TotalViews billId={billsInformation.BILL_ID} />
+        <span>
+          <ViewIcon width={23} height={20}>
+            <label title="조회수" />
+          </ViewIcon>
+          <TotalViews billId={billsInformation.BILL_ID} />
+        </span>
       </ToggleArea>
       <Reply billId={billsInformation.BILL_ID} />
     </ModalFrame>
