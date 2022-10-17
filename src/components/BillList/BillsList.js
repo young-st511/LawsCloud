@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {StyledBillTable, StyledBillThead, StyledBillTbody} from "../style/StyledBillsList";
+import {StyledBillTable, StyledBillThead, StyledBillTbody} from "../../style/StyledBillsList";
 import ExcelFilterButton from "./ExcelFilterButton";
-import BillsModal from "./Modal/BillsModal";
-import TotalViews from "./TotalViews/TotalViews";
-import LikeNum from "./likeButton/LikeNum";
+import BillsModal from "../Modal/BillsModal";
+import TotalViews from "../TotalViews/TotalViews";
+import LikeNum from "../likeButton/LikeNum";
 import {set, ref, get, child, update} from "firebase/database";
-import {firebasedatabase} from "./Firebase/firebase";
+import {firebasedatabase} from "../Firebase/firebase";
 const headerMeta = ["의안명", ["제안자", "(제안 일자)"], ["상임위원회", "(소관부처)"], "조회수", "추천수"];
 
 const BillsList = ({billList, setExcelFilter, setPage}) => {
@@ -79,9 +79,7 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
               </div>
             ))
           ) : (
-            <tr>
-              <td>loding...</td>
-            </tr>
+            <div>loding...</div>
           )}
         </StyledBillTbody>
       </StyledBillTable>

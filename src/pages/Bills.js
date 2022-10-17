@@ -1,10 +1,22 @@
-import React, {useState} from "react";
+import React, {useEffect} from "react";
+
+// route
 import {useLocation} from "react-router-dom";
+
+// style
 import {StyledWrap} from "../style/StyledBills";
 
-import BillsList from "../components/BillsList";
-import SearchBar from "../components/SearchBar";
-import PageNationSession from "../components/PageNationSession";
+// recoil
+import {useRecoilState} from "recoil";
+import {billListState, pageState, searchFilterState, excelFilterState, categoryState} from "../state/StateBillList";
+
+// components
+import BillsList from "../components/BillList/BillsList";
+import SearchBar from "../components/BillList/SearchBar";
+import PageNationSession from "../components/BillList/PageNationSession";
+
+//useEffect
+import {useBillList} from "../hooks/useBillList";
 
 const Bills = () => {
   const location = useLocation();
@@ -14,12 +26,18 @@ const Bills = () => {
       age: 21,
     };
   }
-  const [billList, setBillList] = useState("");
-  const [page, setPage] = useState(1);
-  const [searchFilter, setSearchFilter] = useState(location.state.inputValue);
-  const [excelFilter, setExcelFilter] = useState("");
-  const [category, setCategory] = useState(String(location.state.age));
-
+  const [billList, setBillList] = useRecoilState(billListState);
+  const [page, setPage] = useRecoilState(pageState);
+  // const [searchFilter, setSearchFilter] = useState(location.state.inputValue);
+  const [searchFilter, setSearchFilter] = useRecoilState(searchFilterState);
+  const [excelFilter, setExcelFilter] = useRecoilState(excelFilterState);
+  // const [category, setCategory] = useState(String(location.state.age));
+  const [category, setCategory] = useRecoilState(categoryState);
+  useEffect(() => {
+    setCategory(String(location.state.age));
+    setSearchFilter(location.state.inputValue);
+  }, []);
+  useBillList();
   return (
     <StyledWrap>
       <main>
