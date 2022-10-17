@@ -3,19 +3,20 @@ import styled from "styled-components";
 export const StyledSearchArea = styled.div`
   display: flex;
   height: calc(4vh + 2px);
-  width: max(50vw, 400px);
+  width: max(50vw, 320px);
   max-width: 700px;
   box-sizing: border-box;
   border: 1px solid gray;
   border-radius: 10px;
   background-color: white;
+  margin-top: 2vh;
   margin-bottom: 10px;
   input {
     box-sizing: border-box;
     height: 4vh;
     max-height: 60px;
     width: max(45vw, 350px);
-    font-size: 16px;
+    font-size: min(calc(10px + 1vw), 18px);
     border: 0;
     border-radius: 2px;
     padding: 5px;
@@ -28,7 +29,7 @@ export const StyledSearchArea = styled.div`
   select {
     width: max(5vw, 50px);
     height: 4vh;
-    font-size: 15px;
+    font-size: min(calc(10px + 0.7vw), 15px);
     background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png")
       calc(100% - 5px) center no-repeat;
     background-size: 20px;
