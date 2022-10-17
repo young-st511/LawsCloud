@@ -98,7 +98,7 @@ const ReplyArea = styled.form`
   backgroung-color: gray;
   padding: 4px 4px 38px 4px;
   position: relative;
-  width: 1200px;
+  width: min(100%, 1200px);
   margin: 0 auto;
 `;
 

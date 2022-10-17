@@ -30,12 +30,17 @@ export const ToggleArea = styled.div`
     border-top: 1px solid #888080;
     border-left: 1px solid #888080;
   }
+
+  span {
+    display: flex;
+    gap: 5px;
+  }
 `;
 
 export const ModalView = styled.div`
   box-sizing: border-box;
 
-  width: 1200px;
+  width: min(100%, 1200px);
   height: 700px;
 
   position: absolute;
@@ -55,7 +60,7 @@ export const Blur = styled.label`
   top: 0;
   left: 0;
 
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 
   z-index: 999;
@@ -71,8 +76,9 @@ export const Container = styled.div`
     padding: 0;
   }
 
-  min-width: 900px;
-  max-width: 1200px;
+  box-sizing: border-box;
+
+  width: min(100%, 1200px);
 
   margin: auto;
 
