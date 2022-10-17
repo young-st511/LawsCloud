@@ -30,7 +30,7 @@ const PageNationSession = ({searchFilter, page, setPage, category}) => {
     <>
       <Nav>
         <Button onClick={() => setPage(page - 10)} disabled={page < 11}>
-          &lt;
+          ◀
         </Button>
         {pageArray > 0 &&
           Array(pageArray)
@@ -46,7 +46,7 @@ const PageNationSession = ({searchFilter, page, setPage, category}) => {
         <Button
           onClick={() => setPage(page + 10 <= billSize ? page + 10 : billSize)}
           disabled={Math.ceil(billSize / 10) === Math.ceil(page / 10)}>
-          &gt;
+          ▶
         </Button>
       </Nav>
     </>
