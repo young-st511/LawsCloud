@@ -8,6 +8,7 @@ import Bills from "./pages/Bills";
 import axios from "axios";
 import {useRecoilState} from "recoil";
 import {userIp} from "./recoil/store";
+import RecentReplys from "./components/Reply/RecentReply";
 
 function App() {
   const [ip, setIp] = useRecoilState(userIp);
@@ -27,6 +28,7 @@ function App() {
           <Route path="/compare" element={<ComparedWordCloudPage />} />
           <Route path="/bills" element={<Bills />} />
         </Routes>
+        <RecentReplys />
       </BrowserRouter>
     </>
   );
