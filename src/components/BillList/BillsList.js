@@ -79,7 +79,7 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
               </div>
             ))
           ) : (
-            <div>loding...</div>
+            <div>loading...</div>
           )}
         </StyledBillTbody>
       </StyledBillTable>

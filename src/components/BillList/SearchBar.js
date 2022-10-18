@@ -27,7 +27,7 @@ const SearchBar = ({searchFilter, setSearchFilter, setCategory, category}) => {
           }}>
           {congressman_nums.map((val) => (
             <option key={val} value={val}>
-              {val}대
+              {val}대{" "}
             </option>
           ))}
         </select>
