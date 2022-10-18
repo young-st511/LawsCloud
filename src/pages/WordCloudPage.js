@@ -3,10 +3,18 @@ import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
 import WordCloudSection from "../components/wordcloud-components/WordCloudSection";
 import styled from "styled-components";
-import ToggleLike from "../components/ToggleLike";
+import {useRecoilState} from "recoil";
+import {userIp} from "../recoil/store";
+import axios from "axios";
 
 const WordCloudPage = () => {
   const navigate = useNavigate();
+  const [ip, setIp] = useRecoilState(userIp);
+  const getIp = async () => {
+    const userIpInfo = await axios("https://api.ipify.org/?format=json");
+    setIp(userIpInfo.data.ip);
+  };
+  getIp();
 
   const setSearch = (data) => {
     navigate("/bills", {
@@ -19,7 +27,6 @@ const WordCloudPage = () => {
   return (
     <StyledWrapper>
       <WordCloudSection setSearch={setSearch} size={100} />
-      <ToggleLike billId="PRC_H2P2K0Z9Y2P7G2J0N0X0Z1A1L7R7D2" />
       <button type="button" className="compare-button" onClick={() => navigate("/compare")}>
         비교해보기
       </button>
