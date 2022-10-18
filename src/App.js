@@ -5,6 +5,7 @@ import Title from "./components/Title";
 import WordCloudPage from "./pages/WordCloudPage";
 import ComparedWordCloudPage from "./pages/ComparedWordCloudPage";
 import Bills from "./pages/Bills";
+import RecentReply from "./components/Reply/RecentReply";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/compare" element={<ComparedWordCloudPage />} />
           <Route path="/bills" element={<Bills />} />
         </Routes>
+        <RecentReply />
       </BrowserRouter>
     </>
   );

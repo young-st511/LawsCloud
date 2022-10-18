@@ -13,22 +13,26 @@ import {ReactComponent as ViewIcon} from "../../images/view.svg";
 
 function BillsModal({billsInformation, setOnModal}) {
   return (
-    <ModalFrame setOnModal={setOnModal}>
-      <BillsContents billsInformation={billsInformation} />
-      <ToggleArea>
-        <p>
-          댓글 <TotalComments billId={billsInformation.BILL_ID} />
-          <span className="arrow" />
-        </p>
-        <span>
-          <ViewIcon width={23} height={20}>
-            <label title="조회수" />
-          </ViewIcon>
-          <TotalViews billId={billsInformation.BILL_ID} />
-        </span>
-      </ToggleArea>
-      <Reply billId={billsInformation.BILL_ID} />
-    </ModalFrame>
+    <>
+      {billsInformation && (
+        <ModalFrame setOnModal={setOnModal}>
+          <BillsContents billsInformation={billsInformation} />
+          <ToggleArea>
+            <p>
+              댓글 <TotalComments billId={billsInformation.BILL_ID} />
+              <span className="arrow" />
+            </p>
+            <span>
+              <ViewIcon width={23} height={20}>
+                <label title="조회수" />
+              </ViewIcon>
+              <TotalViews billId={billsInformation.BILL_ID} />
+            </span>
+          </ToggleArea>
+          <Reply billId={billsInformation.BILL_ID} billAge={billsInformation.AGE} />
+        </ModalFrame>
+      )}
+    </>
   );
 }
 
@@ -41,6 +45,7 @@ BillsModal.propTypes = {
     PROPESE_DT: PropTypes.string,
     COMMITTEE: PropTypes.string,
     BILL_ID: PropTypes.string,
+    AGE: PropTypes.string,
   }),
   setOnModal: PropTypes.func,
 };
