@@ -6,7 +6,7 @@ import {v4 as uuidv4} from "uuid";
 import axios from "axios";
 import ReplyList from "./ReplyList";
 
-export default function Reply({billId}) {
+export default function Reply({billId, billAge}) {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [content, setContent] = useState("");
@@ -27,14 +27,16 @@ export default function Reply({billId}) {
   const onSubmit = async (e) => {
     e.preventDefault();
     const userIpInfo = await axios("https://api.ipify.org/?format=json");
-    const userIp = userIpInfo.data.ip;
+    const ipInfo = userIpInfo.data.ip;
+    const userInfo = ipInfo.split(".").splice(0, 2).join(".");
     await addDoc(collection(dbService, `${billId}`), {
       text: content,
       createdAt: serverTimestamp(),
       creatorId: id,
       password: password,
-      ip: userIp,
+      ip: userInfo,
       key: uuidv4(),
+      age: Number(billAge),
     });
     setPassword(""), setId(""), setContent("");
   };

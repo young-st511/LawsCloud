@@ -1,18 +1,23 @@
 import {runTransaction, ref} from "firebase/database";
 import React, {useState} from "react";
 import styled from "styled-components";
-import {firebasedatabase} from "./Firebase/firebase";
-import axios from "axios";
+import {firebasedatabase} from "../Firebase/firebase";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {userIp, userLikeState} from "../../recoil/store";
+import LikeNum from "./LikeNum";
 
 export default function ToggleLike({billId}) {
   const [likestate, setLike] = useState(false);
   const dbRef = ref(firebasedatabase, `billId/${billId}`);
+  const ip = useRecoilValue(userIp);
+  const [likeState, setLikeState] = useRecoilState(userLikeState);
 
-  const LikeClick = async () => {
-    const userIpInfo = await axios("https://api.ipify.org/?format=json");
-    const userIp = `${userIpInfo.data.ip}`.split(".").join("");
-    console.log(userIp);
+  console.log(likeState);
+
+  const LikeClick = () => {
+    const userIp = ip.split(".").join("");
     runTransaction(dbRef, (post) => {
+      console.log(post);
       if (post) {
         if (post.likes && post.likes[userIp]) {
           post.likeCount--;
