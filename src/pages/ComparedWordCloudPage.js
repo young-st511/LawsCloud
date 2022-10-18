@@ -33,7 +33,7 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   .compared-wordclouds {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     box-sizing: border-box;
 
     padding: 50px 10px;
@@ -42,11 +42,11 @@ const StyledWrapper = styled.div`
     .wordcloud-back {
       box-sizing: border-box;
       margin: 45px 30px;
+      padding: 15px 5px;
       box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25), inset 12px 12px 20px rgba(255, 255, 255, 0.25);
       border: 1px solid #e6e6e6;
       border-radius: 15px;
       .wordcloud {
-        padding: 15px 5px;
         box-sizing: content-box;
       }
     }

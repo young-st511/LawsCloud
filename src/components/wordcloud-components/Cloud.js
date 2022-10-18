@@ -21,6 +21,18 @@ function Cloud({age, year, elemId, setSearch, size = 100}) {
 }
 
 function drawCloud(words, elemId, setSearch, size, age) {
+  const adjustWeight = (firstWord) => {
+    if (firstWord > 120) {
+      return 0.3;
+    } else if (firstWord > 80) {
+      return 40 / firstWord;
+    } else if (firstWord > 30) {
+      return 30 / firstWord;
+    } else {
+      return 20 / firstWord;
+    }
+  };
+
   WordCloud(document.getElementById(elemId), {
     list: words,
     shape: "circle",
@@ -29,7 +41,7 @@ function drawCloud(words, elemId, setSearch, size, age) {
     classes: "cloud-word",
     gridSize: words[0][1] < 20 ? 23 : 18,
     minSize: words[0][1] < 20 ? 5 : 8,
-    weightFactor: (words[0][1] <= 120 ? 40 / words[0][1] : 0.3) * (size / 100),
+    weightFactor: adjustWeight(words[0][1]) * (size / 100),
     minRotation: 0,
     maxRotation: 0,
     age: age,
