@@ -19,6 +19,7 @@ async function fetchData(age = 21, page = 1) {
     )
     .then((res) => {
       let data = res.data.nzmimeepazxkubdpn[1].row;
+      console.log(data);
       return data;
     })
     .catch((err) => console.error("호출 fail -", err.name));

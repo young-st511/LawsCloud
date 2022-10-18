@@ -1,16 +1,14 @@
 import {useEffect} from "react";
 import {useSetRecoilState, useRecoilValue} from "recoil";
-import {billListState, pageState, searchFilterState, excelFilterState, categoryState} from "../state/StateBillList";
+import {billListState, pageState, excelFilterState} from "../state/StateBillList";
 import axios from "axios";
 const KEY = process.env.REACT_APP_API_KEY;
 const BaseURL = `https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn?KEY=${KEY}&`;
 
-export const useBillList = () => {
+export const useBillList = (searchFilterValue, categoryValue) => {
   const setBillListUseSet = useSetRecoilState(billListState);
   const pageValue = useRecoilValue(pageState);
-  const searchFilterValue = useRecoilValue(searchFilterState);
   const excelFilterValue = useRecoilValue(excelFilterState);
-  const categoryValue = useRecoilValue(categoryState);
   useEffect(() => {
     axios({
       method: "GET",
