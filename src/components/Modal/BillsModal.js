@@ -33,23 +33,27 @@ function BillsModal({billsInformation, setOnModal}) {
 
   getLikeState();
   return (
-    <ModalFrame setOnModal={setOnModal}>
-      <BillsContents billsInformation={billsInformation} />
-      <ToggleArea>
-        <p>
-          댓글 <TotalComments billId={billsInformation.BILL_ID} />
-          <span className="arrow" />
-        </p>
-        <span className="view-and-like">
-          <ViewIcon width={23} height={20}>
-            <label title="조회수" />
-          </ViewIcon>
-          <TotalViews billId={billsInformation.BILL_ID} />
-          <ToggleLike billId={billsInformation.BILL_ID} userLike={likeState} />
-        </span>
-      </ToggleArea>
-      <Reply billId={billsInformation.BILL_ID} billAge={billsInformation.AGE} />
-    </ModalFrame>
+    <>
+      {billsInformation && (
+        <ModalFrame setOnModal={setOnModal}>
+          <BillsContents billsInformation={billsInformation} />
+          <ToggleArea>
+            <p>
+              댓글 <TotalComments billId={billsInformation.BILL_ID} />
+              <span className="arrow" />
+            </p>
+            <span className="view-and-like">
+              <ViewIcon width={23} height={20}>
+                <label title="조회수" />
+              </ViewIcon>
+              <TotalViews billId={billsInformation.BILL_ID} />
+              <ToggleLike billId={billsInformation.BILL_ID} userLike={likeState} />
+            </span>
+          </ToggleArea>
+          <Reply billId={billsInformation.BILL_ID} billAge={billsInformation.AGE} />
+        </ModalFrame>
+      )}
+    </>
   );
 }
 
