@@ -21,6 +21,13 @@ export default function ReplyDelete({data, id}) {
 const DeleteButton = styled.img`
   width: 12px;
   height: 12px;
-  padding: 2px;
+  border-radius: 4px;
+  margin-right: 30px;
+  padding: 6px;
   cursor: pointer;
+
+  transition: background-color 0.2s;
+  :hover {
+    background-color: #e6e6e6;
+  }
 `;

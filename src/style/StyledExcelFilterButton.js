@@ -5,6 +5,7 @@ export const StyledToggleButton = styled.div`
   top: 5px;
   right: 20px;
   margin-left: 10px;
+  cursor: pointer;
 `;
 
 export const StyledcommitteeList = styled.ul`
