@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import ModalFrame from "./ModalFrame";
 import BillsContents from "../BillsContents/BillsContents";
@@ -8,10 +8,30 @@ import PropTypes from "prop-types";
 import TotalViews from "../TotalViews/TotalViews";
 import TotalComments from "../TotalComments/TotalComments";
 import {ToggleArea} from "../../style/StyledModal";
-
 import {ReactComponent as ViewIcon} from "../../images/view.svg";
+import ToggleLike from "../likeButton/ToggleLike";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {userLikeState, userIp} from "../../recoil/store";
+import {get, child, ref} from "firebase/database";
+import {firebasedatabase} from "../Firebase/firebase";
 
 function BillsModal({billsInformation, setOnModal}) {
+  const [likeState, setLikeState] = useRecoilState(userLikeState);
+  const dbRef = ref(firebasedatabase);
+  const ip = useRecoilValue(userIp);
+  const stringUserIp = ip.split(".").join("");
+
+  const getLikeState = () => {
+    get(child(dbRef, `billId/${billsInformation.BILL_ID}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        setLikeState(snapshot.val().likes[stringUserIp]);
+      } else {
+        setLikeState(false);
+      }
+    });
+  };
+
+  getLikeState();
   return (
     <ModalFrame setOnModal={setOnModal}>
       <BillsContents billsInformation={billsInformation} />
@@ -25,9 +45,10 @@ function BillsModal({billsInformation, setOnModal}) {
             <label title="조회수" />
           </ViewIcon>
           <TotalViews billId={billsInformation.BILL_ID} />
+          <ToggleLike billId={billsInformation.BILL_ID} userLike={likeState} />
         </span>
       </ToggleArea>
-      <Reply billId={billsInformation.BILL_ID} />
+      <Reply billId={billsInformation.BILL_ID} billAge={billsInformation.AGE} />
     </ModalFrame>
   );
 }

@@ -6,16 +6,20 @@ import TotalViews from "../TotalViews/TotalViews";
 import LikeNum from "../likeButton/LikeNum";
 import {set, ref, get, child, update} from "firebase/database";
 import {firebasedatabase} from "../Firebase/firebase";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {userIp, userLikeState} from "../../recoil/store";
+
 const headerMeta = ["의안명", ["제안자", "(제안 일자)"], ["상임위원회", "(소관부처)"], "조회수", "추천수"];
 
 const BillsList = ({billList, setExcelFilter, setPage}) => {
   const [onModal, setOnModal] = useState(false);
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
+  const [likeState, setLikeState] = useRecoilState(userLikeState);
+  const ip = useRecoilValue(userIp);
 
   const setView = (data) => {
     const firebaseRef = ref(firebasedatabase, "billId/" + data.BILL_ID);
-
     get(child(ref(firebasedatabase), "billId/" + data.BILL_ID)).then((snapshot) => {
       if (snapshot.exists()) {
         update(ref(firebasedatabase, `billId/${data.BILL_ID}`), {
@@ -31,6 +35,19 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
     });
 
     setViewCount(0);
+  };
+
+  const getIpLikeInfo = (data) => {
+    const firebaseRef = ref(firebasedatabase);
+    const userIp = ip.split(".").join("");
+    get(child(firebaseRef, "billId/" + data.BILL_ID)).then((snapshot) => {
+      if (snapshot.val().likes) {
+        const data = snapshot.val().likes[userIp];
+        setLikeState(data);
+      } else {
+        setLikeState(false);
+      }
+    });
   };
 
   return (
@@ -61,6 +78,7 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
                     setOnModal(!onModal);
                     setBillsInformation(data);
                     setView(data);
+                    getIpLikeInfo(data);
                   }}>
                   {data.BILL_NAME}
                 </div>

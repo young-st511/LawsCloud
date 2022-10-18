@@ -1,23 +1,22 @@
 import {runTransaction, ref} from "firebase/database";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {firebasedatabase} from "../Firebase/firebase";
-import {useRecoilState, useRecoilValue} from "recoil";
-import {userIp, userLikeState} from "../../recoil/store";
-import LikeNum from "./LikeNum";
+import {useRecoilValue} from "recoil";
+import {userIp} from "../../recoil/store";
 
-export default function ToggleLike({billId}) {
+export default function ToggleLike({billId, userLike}) {
   const [likestate, setLike] = useState(false);
   const dbRef = ref(firebasedatabase, `billId/${billId}`);
   const ip = useRecoilValue(userIp);
-  const [likeState, setLikeState] = useRecoilState(userLikeState);
 
-  console.log(likeState);
+  useEffect(() => {
+    setLike(userLike);
+  }, [userLike]);
 
   const LikeClick = () => {
     const userIp = ip.split(".").join("");
     runTransaction(dbRef, (post) => {
-      console.log(post);
       if (post) {
         if (post.likes && post.likes[userIp]) {
           post.likeCount--;
