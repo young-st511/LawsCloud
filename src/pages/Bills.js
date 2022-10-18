@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 
 // route
 import {useLocation} from "react-router-dom";
@@ -8,7 +8,7 @@ import {StyledWrap} from "../style/StyledBills";
 
 // recoil
 import {useRecoilState} from "recoil";
-import {billListState, pageState, searchFilterState, excelFilterState, categoryState} from "../state/StateBillList";
+import {billListState, pageState, excelFilterState} from "../state/StateBillList";
 
 // components
 import BillsList from "../components/BillList/BillsList";
@@ -26,28 +26,19 @@ const Bills = () => {
       age: 21,
     };
   }
+  const [searchFilter, setSearchFilter] = useState(location.state.inputValue);
+  const [category, setCategory] = useState(String(location.state.age));
   const [billList, setBillList] = useRecoilState(billListState);
   const [page, setPage] = useRecoilState(pageState);
-  // const [searchFilter, setSearchFilter] = useState(location.state.inputValue);
-  const [searchFilter, setSearchFilter] = useRecoilState(searchFilterState);
   const [excelFilter, setExcelFilter] = useRecoilState(excelFilterState);
-  // const [category, setCategory] = useState(String(location.state.age));
-  const [category, setCategory] = useRecoilState(categoryState);
-  useEffect(() => {
-    setCategory(String(location.state.age));
-    setSearchFilter(location.state.inputValue);
-  }, []);
-  useBillList();
+
+  useBillList(searchFilter, category);
   return (
     <StyledWrap>
       <main>
         <SearchBar
-          setBillList={setBillList}
           searchFilter={searchFilter}
           setSearchFilter={setSearchFilter}
-          page={page}
-          setPage={setPage}
-          excelFilter={excelFilter}
           category={category}
           setCategory={setCategory}
         />

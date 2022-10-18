@@ -6,9 +6,10 @@ import searchImg from "../../images/search-icon.svg";
 import {StyledSearchArea} from "../../style/StyledSearchBar";
 const congressman_nums = [16, 17, 18, 19, 20, 21];
 
-const SearchBar = ({searchFilter, setSearchFilter, setPage, setCategory, category}) => {
-  const searchFilterValue = useRecoilValue(searchFilterState);
-  const [searchValue, setSerchValue] = useState(searchFilterValue);
+const SearchBar = ({searchFilter, setSearchFilter, setCategory, category}) => {
+  const [searchValue, setSerchValue] = useState(searchFilter);
+  const setPage = useSetRecoilState(pageState);
+
   const onCheckEnter = (e) => {
     if (e.key === "Enter") {
       setPage(1);
