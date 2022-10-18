@@ -40,7 +40,7 @@ export default function ToggleLike({billId, userLike}) {
   };
 
   return (
-    <div>
+    <div className="like-icon">
       {likestate ? (
         <HeartButton type="checkbox" onClick={onClick}>
           <HeartImg src="/icons/heart.png" alt="하트" />
@@ -55,12 +55,28 @@ export default function ToggleLike({billId, userLike}) {
 }
 
 const HeartButton = styled.button`
+  display: flex;
+  align-items: center;
+
   border: 0;
   outline: 0;
   background-color: white;
+  transform: translateY(1px);
 `;
 
 const HeartImg = styled.img`
   width: 24px;
-  heigth: 24px;
+  height: 24px;
+  margin-left: 2px;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  :hover {
+    width: 26px;
+    height: 26px;
+    margin-left: 0;
+    transform: translateX(1px);
+  }
 `;

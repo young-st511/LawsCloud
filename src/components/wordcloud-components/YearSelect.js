@@ -10,7 +10,7 @@ const YearSelect = ({year, setYear, firstYear, yearsNumber, size = 100}) => {
     setYear(Number(target.value));
     target.parentElement.querySelectorAll("#year-button").forEach((elem) => (elem.className = ""));
     target.classList.add("selectedYear");
-    // console.log(`selected year: ${target.value}년`);
+    // console.log(`selected year: ${target.value}년`);`
   };
 
   return (
@@ -46,13 +46,14 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   button {
+    align-items: center;
     background: none;
     border: none;
     font-weight: 500;
     font-size: ${({size}) => (size / 100) * 24}px;
     font-style: normal;
     color: #c6c6c6;
-    align-items: center;
+    transition: all 0.2s ease-in-out;
   }
   .selectedYear {
     color: black;

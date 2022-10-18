@@ -39,7 +39,7 @@ function BillsContents({billsInformation}) {
           <BillCommittee>{billsInformation.COMMITTEE}</BillCommittee>
         </BillProcResultArea>
       </BillInformationArea>
-      <BillInformationArea>
+      <BillInformationArea className="bill-detail">
         <BillsDetail billId={billsInformation.BILL_ID} />
       </BillInformationArea>
     </Container>

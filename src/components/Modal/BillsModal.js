@@ -40,7 +40,7 @@ function BillsModal({billsInformation, setOnModal}) {
           댓글 <TotalComments billId={billsInformation.BILL_ID} />
           <span className="arrow" />
         </p>
-        <span>
+        <span className="view-and-like">
           <ViewIcon width={23} height={20}>
             <label title="조회수" />
           </ViewIcon>

@@ -36,7 +36,8 @@ export const StyledSearchArea = styled.div`
 
   select {
     width: max(5vw, 50px);
-    height: 4vh;
+    height: 40px;
+    /* height: 4vh; */
     margin-left: 20px;
     font-size: min(calc(10px + 0.7vw), 14px);
     font-weight: 600;
@@ -48,11 +49,12 @@ export const StyledSearchArea = styled.div`
     outline: 0 none;
   }
   button {
-    height: 4vh;
+    height: 40px;
+    /* height: 4vh; */
     margin-right: 8px;
     margin-top: 2px;
     border: 0;
-    background-color: #ffffff;
+    background: none;
   }
   img {
     height: 18px;
