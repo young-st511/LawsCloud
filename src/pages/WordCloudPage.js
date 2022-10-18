@@ -3,18 +3,9 @@ import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
 import WordCloudSection from "../components/wordcloud-components/WordCloudSection";
 import styled from "styled-components";
-import {useRecoilState} from "recoil";
-import {userIp} from "../recoil/store";
-import axios from "axios";
 
 const WordCloudPage = () => {
   const navigate = useNavigate();
-  const [ip, setIp] = useRecoilState(userIp);
-  const getIp = async () => {
-    const userIpInfo = await axios("https://api.ipify.org/?format=json");
-    setIp(userIpInfo.data.ip);
-  };
-  getIp();
 
   const setSearch = (data) => {
     navigate("/bills", {
