@@ -2,32 +2,36 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
   display: flex;
+  min-width: 428px;
   justify-content: center;
   align-items: center;
   gap: 4px;
-  margin: 10px 16px 16px 16px;
+  margin: 20px 16px 16px 16px;
 `;
 
 export const Button = styled.button`
   display: flex;
   justify-content: center;
-  width: min(calc(15px + 2.5vw), 40px);
-  color: black;
-  font-size: 1rem;
+  align-items: center;
+  width: min(calc(20px + 2.5vw), 40px);
+  height: 40px;
+  margin: 0;
+  padding: 8px;
+  font-size: 16px;
   font-weight: 700;
+  color: black;
   border: 0;
   border-radius: 8px;
-  padding: 8px;
-  margin: 0;
   background: white;
+  transition: all 0.2s ease-in-out;
   &:hover {
-    background: gray;
+    background: #c6c6c6;
     cursor: pointer;
     transform: translateY(-2px);
   }
 
   &[disabled] {
-    color: gray;
+    color: #e6e6e6;
     cursor: revert;
     transform: revert;
   }
