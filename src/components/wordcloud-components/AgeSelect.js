@@ -6,7 +6,7 @@ const AgeSelect = ({age, setAge, setYear, agesAndYears, size = 100}) => {
   const handleChange = ({target: {value}}) => {
     setAge(Number(value));
     setYear(Number(agesAndYears[value].firstYear));
-    console.log(`now age: ${value} 대`);
+    // console.log(`now age: ${value} 대`);
   };
   const ages = [];
   for (const key in agesAndYears) {

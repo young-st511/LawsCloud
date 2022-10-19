@@ -12,6 +12,8 @@ function TotalViews({billId}) {
   get(child(ref(firebasedatabase), `billId/${billId}`)).then((snapshot) => {
     if (snapshot.exists()) {
       setViewCount(snapshot.val().count);
+    } else {
+      setViewCount(0);
     }
   });
 

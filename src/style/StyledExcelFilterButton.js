@@ -5,6 +5,7 @@ export const StyledToggleButton = styled.button`
   top: 17px;
   right: 0;
   left: min(16vw, 110px);
+  cursor: pointer;
   color: ${(props) => (props.toggle ? "gray" : "white")};
   appearance: none;
   background-color: transparent;

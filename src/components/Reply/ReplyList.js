@@ -15,13 +15,13 @@ export default function ReplyList({billId}) {
       }));
       setReplysInfo(replyArray);
     });
-  }, []);
+  }, [billId]);
 
   const Replys = replysInfo.map((data) => {
     return (
       <Reply key={data.key}>
-        <span>
-          {data.creatorId}({data.ip})
+        <span className="reply-id">
+          {data.creatorId + " "}({data.ip})
         </span>
         <ReplyText>{data.text}</ReplyText>
         <ReplyDelete data={data} id={billId} />
@@ -29,17 +29,35 @@ export default function ReplyList({billId}) {
     );
   });
 
-  return <div>{Replys}</div>;
+  return <ReplyArea>{Replys}</ReplyArea>;
 }
 
+const ReplyArea = styled.div`
+  width: min(100%, 1200px);
+  border: 1px solid #000;
+  border-width: 3px 0 0 0;
+  padding: 12px 0;
+  font-weight: 500;
+  .reply-id {
+    width: 200px;
+    margin-left: 30px;
+    color: #969696;
+    overflow-wrap: break-word;
+  }
+`;
+
 const Reply = styled.div`
-  padding: 8px 0;
-  margin: auto;
   display: flex;
-  width: min(100%, 1160px);
+  align-items: center;
+  padding: 12px 0;
+  margin: auto 0;
+  display: flex;
+  width: min(100%, 1200px);
   justify-content: space-between;
 `;
 
 const ReplyText = styled.div`
   width: min(100%, 820px);
+  color: #000;
+  overflow-wrap: break-word;
 `;

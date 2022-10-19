@@ -62,56 +62,91 @@ export default function Reply({billId, billAge}) {
           required
           value={content}
           onChange={onChange}></InputReply>
-        <SubmitButton type="submit" value="작성" />
+        <SubmitButton type="submit" value="댓글 작성" />
       </ReplyArea>
     </>
   );
 }
 
-const ReplyId = styled.input`
-  width: 140px;
-  height: 30px;
-  margin-bottom: 2px;
-`;
-
-const ReplyPassword = styled.input`
-  width: 140px;
-  height: 30px;
-`;
-
-const InputReply = styled.input`
-  width: 984px;
-  height: 106px;
-`;
-
 const UserInfoArea = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 2px 0 2px;
+  margin: 0 10px 0 0;
 `;
 
 const ReplyArea = styled.form`
+  position: relative;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  backgroung-color: gray;
-  padding: 4px 4px 38px 4px;
-  position: relative;
+  align-items: flex-start;
+  justify-content: baseline;
+  margin: 0;
+  padding: 15px 30px 70px 30px;
   width: min(100%, 1200px);
-  margin: 0 auto;
+  border-top: 3px solid black;
+`;
+
+const ReplyId = styled.input`
+  width: 210px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+
+  font-size: 16px;
+  color: #000000;
+  ::placeholder {
+    color: #969696;
+  }
+  border: 1px solid #c6c6c6;
+`;
+
+const ReplyPassword = styled.input`
+  width: 210px;
+  height: 40px;
+  padding-left: 10px;
+
+  font-size: 16px;
+  color: #000000;
+  ::placeholder {
+    color: #969696;
+  }
+  border: 1px solid #c6c6c6;
+`;
+
+const InputReply = styled.textarea`
+  width: 900px;
+  height: 155px;
+  resize: none;
+  padding-left: 10px;
+  padding-top: 10px;
+  border: 1px solid #c6c6c6;
+
+  font-size: 16px;
+  color: #000000;
+  ::placeholder {
+    color: #969696;
+  }
 `;
 
 const SubmitButton = styled.input`
-  font-weigth: bold;
-  background-color: black;
   position: absolute;
-  bottom: 2px;
-  right: 16px;
-  width: 85px;
-  height: 30px;
+  bottom: 20px;
+  right: 30px;
+  width: 92px;
+  height: 36px;
+
   color: white;
+  font-weight: 600;
+  font-size: 14px;
+
+  background: #000000;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+
+  transition: background-color 0.2s;
+
+  :hover {
+    background-color: #565656;
+  }
 `;

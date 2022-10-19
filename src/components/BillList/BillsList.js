@@ -79,6 +79,7 @@ const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
                     setBillsInformation(data);
                     setView(data);
                     getIpLikeInfo(data);
+                    window.scrollTo(0, 0);
                   }}>
                   {data.BILL_NAME}
                 </div>
