@@ -11,9 +11,12 @@ export const useBillList = ({searchFilter, category}) => {
   const pageValue = useRecoilValue(pageState);
   const excelFilterValue = useRecoilValue(excelFilterState);
   useEffect(() => {
+    console.log(category, pageValue, searchFilter, excelFilterValue);
     axios({
       method: "GET",
-      url: `${BaseURL}AGE=${category}&Type=json&pIndex=${pageValue}&pSize=7&BILL_NAME=${searchFilter}&COMMITTEE=${excelFilterValue}`,
+      url: `${BaseURL}AGE=${category}&Type=json&pIndex=${pageValue}&pSize=7&BILL_NAME=${searchFilter}&COMMITTEE=${
+        excelFilterValue === "전체" ? "" : excelFilterValue
+      }`,
     })
       .then((res) => setBillListUseSet(res.data.nzmimeepazxkubdpn[1].row))
       .catch((error) => alert(`검색 결과가 없습니다.\n${error}`));
