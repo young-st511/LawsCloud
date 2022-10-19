@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 // route
 import {useLocation} from "react-router-dom";
@@ -33,7 +33,7 @@ const Bills = () => {
   const [page, setPage] = useRecoilState(pageState);
   const [excelFilter, setExcelFilter] = useRecoilState(excelFilterState);
 
-  useBillList(searchFilter, category);
+  useBillList({searchFilter, category});
   return (
     <StyledWrap>
       <main>
@@ -43,10 +43,16 @@ const Bills = () => {
           category={category}
           setCategory={setCategory}
         />
-        <BillsList billList={billList} setExcelFilter={setExcelFilter} setPage={setPage} />
+        <BillsList billList={billList} excelFilter={excelFilter} setExcelFilter={setExcelFilter} setPage={setPage} />
       </main>
       <footer>
-        <PageNationSession page={page} searchFilter={searchFilter} setPage={setPage} category={category} />
+        <PageNationSession
+          page={page}
+          searchFilter={searchFilter}
+          setPage={setPage}
+          category={category}
+          excelFilter={excelFilter}
+        />
       </footer>
       <RecentReplys />
     </StyledWrap>

@@ -10,5 +10,9 @@ export const pageState = atom({
 });
 export const excelFilterState = atom({
   key: "excelFilter",
-  default: "",
+  default: "전체",
+});
+export const billSizeState = atom({
+  key: "billSize",
+  default: 0,
 });
