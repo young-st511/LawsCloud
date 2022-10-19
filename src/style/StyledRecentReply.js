@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Replys = styled.section`
+  box-sizing: border-box;
   width: min(100%, 836px);
   height: 1099px;
 
@@ -71,7 +72,12 @@ export const ReplyArea = styled.div`
 
 export const Title = styled.div`
   box-sizing: border-box;
+  width: 100%;
   height: 51px;
+
+  position: sticky;
+  top: 0;
+  left: 0;
 
   display: flex;
   align-items: center;
@@ -80,6 +86,10 @@ export const Title = styled.div`
 
   font-size: 24px;
   font-weight: 700;
+
+  z-index: 10;
+  background-color: #000;
+  color: #fff;
 
   border-bottom: 2px solid #000000;
 `;
