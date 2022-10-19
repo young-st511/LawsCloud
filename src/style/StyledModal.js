@@ -49,7 +49,7 @@ export const ModalView = styled.div`
   width: min(100%, 1200px);
   height: 700px;
 
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -64,12 +64,12 @@ export const ModalView = styled.div`
 `;
 
 export const Blur = styled.label`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   z-index: 999;
 
@@ -100,6 +100,7 @@ export const Container = styled.div`
 export const BillProcResultArea = styled.div`
   display: flex;
   flex: 1;
+  background-color: #fff;
   z-index: 10;
 `;
 
@@ -157,6 +158,10 @@ export const Title = styled.div`
   background-color: #e6e6e6;
   color: #000000;
 
+  white-space: nowrap;
+
+  z-index: 10;
+
   border: solid;
   border-width: 0 1px 1px 0;
   border-color: #c6c6c6;
@@ -165,7 +170,7 @@ export const Title = styled.div`
 export const InfoArea = styled.div`
   display: flex;
 
-  width: 40%;
+  flex: 1;
 `;
 
 export const BillInfo = styled.div`
@@ -173,6 +178,8 @@ export const BillInfo = styled.div`
   align-items: center;
   flex: 1;
   gap: 10px;
+
+  white-space: nowrap;
 
   padding-left: 14px;
 
@@ -186,8 +193,8 @@ export const BillInfo = styled.div`
 
 export const BillCommittee = styled.div`
   display: flex;
-  flex: 1;
   align-items: center;
+  width: 40%;
 
   padding-left: 14px;
 

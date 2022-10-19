@@ -31,6 +31,11 @@ function BillsModal({billsInformation, setOnModal}) {
     });
   };
 
+  useEffect(() => {
+    document.body.style = `overflow: hidden`;
+    return () => (document.body.style = `overflow: auto`);
+  }, []);
+
   getLikeState();
   return (
     <>
