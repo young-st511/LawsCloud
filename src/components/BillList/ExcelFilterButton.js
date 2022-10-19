@@ -26,7 +26,9 @@ const ExcelFilterButton = ({setExcelFilter, setPage}) => {
   const [toggle, setToggle] = useState(false);
   return (
     <>
-      <StyledToggleButton onClick={() => setToggle(!toggle)}>▼</StyledToggleButton>
+      <StyledToggleButton toggle={toggle} onClick={() => setToggle(!toggle)}>
+        ▼
+      </StyledToggleButton>
       <StyledcommitteeList toggle={toggle}>
         {committeeArray.map((d, idx) => (
           <li key={idx}>

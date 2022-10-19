@@ -9,9 +9,9 @@ import {firebasedatabase} from "../Firebase/firebase";
 import {useRecoilState, useRecoilValue} from "recoil";
 import {userIp, userLikeState} from "../../recoil/store";
 
-const headerMeta = ["의안명", ["제안자", "(제안 일자)"], ["상임위원회", "(소관부처)"], "조회수", "추천수"];
+const BillsList = ({billList, excelFilter, setExcelFilter, setPage}) => {
+  const headerMeta = ["의안명", ["제안자", "제안 일자"], ["상임위원회", excelFilter], "조회수", "추천수"];
 
-const BillsList = ({billList, setExcelFilter, setPage}) => {
   const [onModal, setOnModal] = useState(false);
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
@@ -60,7 +60,7 @@ const BillsList = ({billList, setExcelFilter, setPage}) => {
                 ? [
                     data[0],
                     <span key={idx} className="subHeader">
-                      {data[1]}
+                      ({data[1] === "" ? "전체" : data[1]})
                     </span>,
                   ]
                 : data}
