@@ -12,7 +12,6 @@ export default function RecentReplys() {
     get(child(ref(firebasedatabase), `billId/`)).then((snapshot) => {
       if (snapshot.exists()) {
         const viewed = snapshot.val();
-        console.log(Object.entries(viewed));
         Object.entries(viewed).map((bill) => {
           onSnapshot(collection(dbService, `${bill[0]}`), (sanpshot) => {
             const replyArray = sanpshot.docs.map((doc) => ({
@@ -22,20 +21,19 @@ export default function RecentReplys() {
               ...doc.data(),
             }));
 
-            console.log(replyArray);
-
             replyArray.map((item) => {
               if (item.text && item.age) {
                 item["billName"] = bill[1].name;
                 item["billId"] = bill[0];
+
                 setRecentReply((recentReply) => [...recentReply, item]);
+                console.log(recentReply);
               }
             });
           });
         });
       }
     });
-    setRecentReply([]);
   }, []);
 
   return (

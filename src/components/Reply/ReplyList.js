@@ -15,7 +15,7 @@ export default function ReplyList({billId}) {
       }));
       setReplysInfo(replyArray);
     });
-  }, []);
+  }, [billId]);
 
   const Replys = replysInfo.map((data) => {
     return (
