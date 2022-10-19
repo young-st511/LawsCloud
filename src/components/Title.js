@@ -1,12 +1,20 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import {useSetRecoilState} from "recoil";
+import {pageState} from "../state/StateBillList";
 import styled from "styled-components";
 
 const Title = () => {
+  const setPageStateUseSet = useSetRecoilState(pageState);
   const navigate = useNavigate();
   return (
     <Header>
-      <h1 onClick={() => navigate("/main")} style={{cursor: "pointer"}}>
+      <h1
+        onClick={() => {
+          setPageStateUseSet(1);
+          navigate("/main");
+        }}
+        style={{cursor: "pointer"}}>
         Laws Cloud
       </h1>
       <img
