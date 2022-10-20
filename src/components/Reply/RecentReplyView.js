@@ -76,7 +76,6 @@ export default function RecentReplysView({recentReplyArr}) {
             <BillNameArea>
               <BillName>{data.billName}</BillName>
             </BillNameArea>
-
             <ReplyArea>
               <Reply className="icon">
                 <ArrowBackIcon width={23} height={20} />
