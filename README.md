@@ -1,15 +1,25 @@
-<h2> Laws Cloud </h2>
+
+<div align="center" >
+<h1> Laws Cloud </h1>
 
 <div> 2000년대 이후 법률 발의안들의 키워드들을 워드 클라우드로 보여주는 웹 어플리케이션입니다. </div>
 <h3> Description of Project </h3>
-<div> 사이트 도메인 </div>
+<h3> 사이트 도메인 </h3>
 <a href="lawsColud.top"> lawscolud.top </a>
-<div> preview </div>
-<img src="./lawsCloud메인" alt="main" />
-<img src="./LawsCloud법률안리스트" alt="billsList" />
-<img src=='/LawsCloud상세페이지모달" alt="billDetail />
 
-<div style="margin-bottom: 30px;">
+<br/>
+
+<h3><b> preview </b></h3><br/>
+<img src="./lawsCloud메인.PNG" alt="main" />
+<span>메인 페이지</span><br/><br/><br/>
+<img src="./LawsCloud비교.PNG" alt="compareCloud" />
+<span>비교 페이지</span><br/><br/><br/>
+<img src="./LawsCloud법률안리스트.PNG" alt="billsList" />
+<span>법률안페이지</span><br/><br/><br/>
+<img src="/LawsCloud상세페이지모달.PNG" alt="billDetail "/>
+<span>법률안 상세 페이지</span>
+
+<div style="margin-bottom: 30px">
 
 </div>
 
@@ -36,5 +46,7 @@
 | 우인우       | FrontEnd | <a href="https://github.com/wooinwoo">@wooinwoo</a>                           |
 | 정영훈       | FrontEnd |  <a href="https://github.com/young-st511">@young-st5111</a> |
 | 정영훈       | FrontEnd |  <a href="https://github.com/kykson2">@kykson2</a> |
+
+</div>
 
 </div>
