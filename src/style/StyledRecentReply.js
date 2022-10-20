@@ -16,6 +16,11 @@ export const Replys = styled.section`
 
 export const RecentReply = styled.div`
   border-bottom: 1px solid #c6c6c6;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
 `;
 
 export const BillNameArea = styled.div`
