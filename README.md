@@ -43,9 +43,10 @@
 | TEAM         | Position |  Github                                                   |
 | -----------  | -------- | ----------------------------------------------------------|
 | 이승훈       | FrontEnd | <a href="https://github.com/mandarin-sep">@mandarin-sep</a>      |
+| 김관우       | FrontEnd |  <a href="https://github.com/kykson2">@kykson2</a> |
 | 우인우       | FrontEnd | <a href="https://github.com/wooinwoo">@wooinwoo</a>                           |
 | 정영훈       | FrontEnd |  <a href="https://github.com/young-st511">@young-st5111</a> |
-| 정영훈       | FrontEnd |  <a href="https://github.com/kykson2">@kykson2</a> |
+
 
 </div>
 
