@@ -25,12 +25,13 @@ export default function RecentReplysView({recentReplyArr}) {
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
 
-  const overlappingReplyCheck = recentReplyArr.reduce(function (acc, current) {
+  let overlappingReplyCheck = recentReplyArr.reduce(function (acc, current) {
     if (acc.findIndex(({id}) => id === current.id) === -1) {
       acc.push(current);
     }
     return acc;
   }, []);
+  overlappingReplyCheck.sort((prev, next) => next.seconds - prev.seconds);
 
   const setView = (data) => {
     const firebaseRef = ref(firebasedatabase, "billId/" + data.billId);
