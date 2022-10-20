@@ -39,7 +39,7 @@ export const Replys = styled.section`
     }
     /* firefox */
     scrollbar-color: #c6c6c6;
-    scrollbar-width: none;
+    scrollbar-width: thin;
   }
 `;
 
