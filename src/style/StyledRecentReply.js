@@ -5,7 +5,7 @@ export const Replys = styled.section`
   width: min(100%, 836px);
   height: 1099px;
 
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: 10px;
 
   border: 2px solid #333333;

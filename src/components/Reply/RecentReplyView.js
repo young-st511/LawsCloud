@@ -25,7 +25,6 @@ export default function RecentReplysView({recentReplyArr}) {
   const [billsInformation, setBillsInformation] = useState({});
   const [viewCount, setViewCount] = useState(0);
 
-  console.log(recentReplyArr);
   const overlappingReplyCheck = recentReplyArr.reduce(function (acc, current) {
     if (acc.findIndex(({id}) => id === current.id) === -1) {
       acc.push(current);
@@ -61,7 +60,6 @@ export default function RecentReplysView({recentReplyArr}) {
       .then((res) => setBillsInformation(res.data.nzmimeepazxkubdpn[1].row))
       .catch((error) => alert(`검색 결과가 없습니다.\n${error}`));
   };
-  console.log(billsInformation);
 
   return (
     <>
