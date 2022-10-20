@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import StyledWrapper from "../../style/StyledWordCloud";
 import Cloud from "./Cloud";
 
 const WordCloud = ({age, year, setSearch, size = 100, elemId}) => {
@@ -22,18 +22,3 @@ WordCloud.propTypes = {
 };
 
 export default WordCloud;
-
-const StyledWrapper = styled.div`
-  .wordcloud {
-    width: ${({size}) => (size / 100) * 600}px;
-    height: ${({size}) => (size / 100) * 550}px;
-    margin: 20px 20px;
-    span.cloud-word {
-      cursor: pointer;
-      transition: transform 0.3s;
-      &:hover {
-        transform: scale(1.1) !important;
-      }
-    }
-  }
-`;
