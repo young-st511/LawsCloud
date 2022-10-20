@@ -4,6 +4,9 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* firefox */
+  scrollbar-color: #c6c6c6;
+  scrollbar-width: thin;
 }
 ::-webkit-scrollbar {
   width: 6px;

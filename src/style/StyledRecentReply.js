@@ -20,6 +20,7 @@ export const Replys = styled.section`
     overflow-x: hidden;
 
     z-index: 1;
+
     &::-webkit-scrollbar {
       width: 6px;
       overflow-y: hidden;
@@ -36,6 +37,9 @@ export const Replys = styled.section`
       display: none;
       background: none;
     }
+    /* firefox */
+    scrollbar-color: #c6c6c6;
+    scrollbar-width: none;
   }
 `;
 
