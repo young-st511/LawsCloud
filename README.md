@@ -1,4 +1,3 @@
-
 <div align="center" >
 <h1> Laws Cloud </h1>
 
@@ -8,16 +7,21 @@
 <a href="lawsColud.top"> lawscolud.top </a>
 
 <br/>
+<br/>
+<br/>
 
-<h3><b> ## preview </b></h3><br/>
+<h2><b> Preview </b></h2><br/>
+<h3><b> 메인 페이지 </b></h3>
 <img src="./lawsCloud메인.PNG" alt="main" />
-<span>## 메인 페이지</span><br/><br/><br/>
+<br/><br/><br/>
+<h3><b> 비교 페이지 </b></h3>
 <img src="./LawsCloud비교.PNG" alt="compareCloud" />
-<span>## 비교 페이지</span><br/><br/><br/>
+<br/><br/><br/>
+<h3><b> 법률안 페이지 </b></h3>
 <img src="./LawsCloud법률안리스트.PNG" alt="billsList" />
-<span>## 법률안페이지</span><br/><br/><br/>
-<img src="/LawsCloud상세페이지모달.PNG" alt="billDetail "/>
-<span>## 법률안 상세 페이지</span>
+<br/><br/><br/>
+<h3><b> 법률안 상세페이지 </b></h3>
+<img src="./LawsCloud상세페이지모달.PNG" alt="billDetail "/>
 
 <div style="margin-bottom: 30px">
 
@@ -40,13 +44,12 @@
 
 ### Crew Info
 
-| TEAM         | Position |  Github                                                   |
-| -----------  | -------- | ----------------------------------------------------------|
-| 이승훈       | FrontEnd | <a href="https://github.com/mandarin-sep">@mandarin-sep</a>      |
-| 김관우       | FrontEnd |  <a href="https://github.com/kykson2">@kykson2</a> |
-| 우인우       | FrontEnd | <a href="https://github.com/wooinwoo">@wooinwoo</a>                           |
-| 정영훈       | FrontEnd |  <a href="https://github.com/young-st511">@young-st5111</a> |
-
+| TEAM   | Position | Github                                                      |
+| ------ | -------- | ----------------------------------------------------------- |
+| 이승훈 | FrontEnd | <a href="https://github.com/mandarin-sep">@mandarin-sep</a> |
+| 김관우 | FrontEnd | <a href="https://github.com/kykson2">@kykson2</a>           |
+| 우인우 | FrontEnd | <a href="https://github.com/wooinwoo">@wooinwoo</a>         |
+| 정영훈 | FrontEnd | <a href="https://github.com/young-st511">@young-st5111</a>  |
 
 </div>
 
