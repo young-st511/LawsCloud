@@ -1,22 +1,40 @@
-## 협업룰
+<h2> Laws Cloud </h2>
 
-### Prettier 규칙
-- semi: true - statement 마지막에 세미콜론을 찍음
-- printWidth: 120 - 선호되는 한 줄의 길이
-- endOfLine: 'auto' - 파일의 마지막에는 EOL을 보장
-- singleQuote: false- 홑따옴표가 아닌 쌍따옴표를 사용
-- useTabs: false - 탭을 사용하지 않고 스페이스를 사용
-- tabWidth: 2 - 탭을 할 경우 2 스페이스
-- trailingComma: 'all' - 여러줄로 나뉘었을 때는 쉼표를 사용
-- arrowParens: 'always' - 화살표 함수에서 괄호 사용 의무화
+<div> 2000년대 이후 법률 발의안들의 키워드들을 워드 클라우드로 보여주는 웹 어플리케이션입니다. </div>
+<h3> Description of Project </h3>
+<div> 사이트 도메인 </div>
+<a href="lawsColud.top"> lawscolud.top </a>
+<div> preview </div>
+<img src="./lawsCloud메인" alt="main" />
+<img src="./LawsCloud법률안리스트" alt="billsList" />
+<img src=='/LawsCloud상세페이지모달" alt="billDetail />
 
-### Commit 규칙
-1. 타입
-    1. Fix 수정
-    2. Add 기능 추가
-    3. Mod 코드 수정
-    4. Rm 기능 삭제
-    5. Refactor : 코드 리팩토링 (변수명 수정 등)
-2. Subject : 제목
-    1. type : subject
-    2. body
+<div style="margin-bottom: 30px;">
+
+</div>
+
+### Tech Stacks
+
+<!-- JavaScript -->
+<img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/>
+<!-- React -->
+<img alt="React" src ="https://img.shields.io/badge/React-61DAFB.svg?&style=for-the-badge&logo=React&logoColor=black"/>
+<!-- Recoil -->
+<img alt="Recoil" src ="https://img.shields.io/badge/Recoil-646CFF.svg?&style=for-the-badge"/>
+<!-- Styled Components -->
+<img alt="Vite" src ="https://img.shields.io/badge/styledcomponents-DB7093.svg?&style=for-the-badge&logo=styledcomponents&logoColor=white"/>
+<!-- FireBase -->
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+
+<div>
+
+### Crew Info
+
+| TEAM         | Position |  Github                                                   |
+| -----------  | -------- | ----------------------------------------------------------|
+| 이승훈       | FrontEnd | <a href="https://github.com/mandarin-sep">@mandarin-sep</a>      |
+| 우인우       | FrontEnd | <a href="https://github.com/wooinwoo">@wooinwoo</a>                           |
+| 정영훈       | FrontEnd |  <a href="https://github.com/young-st511">@young-st5111</a> |
+| 정영훈       | FrontEnd |  <a href="https://github.com/kykson2">@kykson2</a> |
+
+</div>
