@@ -7,7 +7,7 @@ function BillsDetail({billId}) {
 
   return (
     <BillDetailArea>
-      <iframe id="iframe" className="detail" src={url} title="발의안" width="100%" height="100%" />
+      <iframe id="iframe" className="detail" src={url} title="발의안" width="100%" height="100%" frameBorder="0" />
     </BillDetailArea>
   );
 }

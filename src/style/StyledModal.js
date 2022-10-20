@@ -47,7 +47,7 @@ export const ModalView = styled.div`
   box-sizing: border-box;
 
   width: min(100%, 1200px);
-  height: 700px;
+  height: 600px;
 
   position: fixed;
   left: 50%;
@@ -95,6 +95,18 @@ export const Container = styled.div`
   /* border: solid;
   border-width: 1px 0 0 1px;
   border-color: #c6c6c6; */
+
+  .bill-detail {
+    @media screen and (max-width: 722px) {
+      height: 500px;
+      margin-top: -10px;
+    }
+
+    @media screen and (max-width: 550px) {
+      height: 450px;
+      margin-top: -5px;
+    }
+  }
 `;
 
 export const BillProcResultArea = styled.div`
@@ -108,6 +120,10 @@ export const BillInformationArea = styled.div`
   display: flex;
   background-color: #fff;
   z-index: 10;
+
+  @media screen and (max-width: 722px) {
+    flex-direction: column;
+  }
 `;
 
 export const BillProc = styled.div`
@@ -124,6 +140,10 @@ export const BillProc = styled.div`
   border-color: #c6c6c6;
   background-color: #fff;
   z-index: 10;
+
+  @media screen and (max-width: 722px) {
+    width: 20%;
+  }
 `;
 
 export const BillNameArea = styled.div`
@@ -189,6 +209,11 @@ export const BillInfo = styled.div`
   background-color: #fff;
 
   z-index: 10;
+
+  @media screen and (max-width: 722px) {
+    flex: 1;
+    border-width: 0 0px 1px 0;
+  }
 `;
 
 export const BillCommittee = styled.div`
@@ -201,6 +226,10 @@ export const BillCommittee = styled.div`
   border: solid;
   border-width: 0 0 1px 0;
   border-color: #c6c6c6;
+
+  @media screen and (max-width: 722px) {
+    flex: 1;
+  }
 `;
 
 export const BorderLine = styled.div`
@@ -230,7 +259,14 @@ export const BillDetailArea = styled.div`
 
   z-index: 1;
   .detail {
-    border: none;
+    // border: none;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 550px;
+    -webkit-transform: scale(0.8);
+    -webkit-transform-origin: 10% -40%;
+    border-width: 0;
   }
 `;
 

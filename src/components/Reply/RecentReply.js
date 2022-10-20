@@ -27,7 +27,6 @@ export default function RecentReplys() {
                 item["billId"] = bill[0];
 
                 setRecentReply((recentReply) => [...recentReply, item]);
-                console.log(recentReply);
               }
             });
           });
