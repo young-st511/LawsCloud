@@ -65,29 +65,31 @@ export default function RecentReplysView({recentReplyArr}) {
     <>
       <Replys>
         <Title>최신 댓글</Title>
-        {overlappingReplyCheck.map((data) => (
-          <RecentReply
-            onClick={() => {
-              setOnModal(!onModal);
-              getBillsData({data, setBillsInformation});
-              setView(data);
-            }}
-            key={data.key}>
-            <BillNameArea>
-              <BillName>{data.billName}</BillName>
-            </BillNameArea>
-            <ReplyArea>
-              <Reply className="icon">
-                <ArrowBackIcon width={23} height={20} />
-                <span>{data.text}</span>
-              </Reply>
-              <Info>
-                <span>{data.creatorId}</span>
-                {/* <span>{data.createdAt}</span> */}
-              </Info>
-            </ReplyArea>
-          </RecentReply>
-        ))}
+        <div className="recent-replies">
+          {overlappingReplyCheck.map((data) => (
+            <RecentReply
+              onClick={() => {
+                setOnModal(!onModal);
+                getBillsData({data, setBillsInformation});
+                setView(data);
+              }}
+              key={data.key}>
+              <BillNameArea>
+                <BillName>{data.billName}</BillName>
+              </BillNameArea>
+              <ReplyArea>
+                <Reply className="icon">
+                  <ArrowBackIcon width={23} height={20} />
+                  <span>{data.text}</span>
+                </Reply>
+                <Info>
+                  <span>{data.creatorId}</span>
+                  {/* <span>{data.createdAt}</span> */}
+                </Info>
+              </ReplyArea>
+            </RecentReply>
+          ))}
+        </div>
         {onModal && billsInformation[0] && (
           <BillsModal billsInformation={billsInformation[0]} setOnModal={(bool) => setOnModal(bool)} />
         )}
