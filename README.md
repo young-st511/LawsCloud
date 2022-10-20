@@ -9,15 +9,15 @@
 
 <br/>
 
-<h3><b> preview </b></h3><br/>
+<h3><b> ## preview </b></h3><br/>
 <img src="./lawsCloud메인.PNG" alt="main" />
-<span>메인 페이지</span><br/><br/><br/>
+<span>## 메인 페이지</span><br/><br/><br/>
 <img src="./LawsCloud비교.PNG" alt="compareCloud" />
-<span>비교 페이지</span><br/><br/><br/>
+<span>## 비교 페이지</span><br/><br/><br/>
 <img src="./LawsCloud법률안리스트.PNG" alt="billsList" />
-<span>법률안페이지</span><br/><br/><br/>
+<span>## 법률안페이지</span><br/><br/><br/>
 <img src="/LawsCloud상세페이지모달.PNG" alt="billDetail "/>
-<span>법률안 상세 페이지</span>
+<span>## 법률안 상세 페이지</span>
 
 <div style="margin-bottom: 30px">
 
