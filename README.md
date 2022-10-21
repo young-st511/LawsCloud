@@ -5,6 +5,8 @@
 <h3> Description of Project </h3>
 <h3> 사이트 도메인 </h3>
 <a href="lawsColud.top"> lawscolud.top </a>
+<h4> Why? </h4>
+각 연도별 국회의원들의 관심사에 대한 키워드를 한눈에 파악할 수 있음
 
 <br/>
 <br/>
