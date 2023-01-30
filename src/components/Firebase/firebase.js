@@ -4,13 +4,13 @@ import {getFirestore} from "firebase/firestore";
 import {getDatabase} from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyApTkZhyPpTI6e9x4NfHQR5ycd2x9zjfC0",
-  authDomain: "lawscloud.firebaseapp.com",
-  projectId: "lawscloud",
-  storageBucket: "lawscloud.appspot.com",
-  messagingSenderId: "169022801958",
-  appId: "1:169022801958:web:8fda3f99c35c1a568cbee7",
-  databaseURL: "https://lawscloud-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  apiKey: process.env.REACT_API_KEY,
+  authDomain: process.env.REACT_AUTH_DOMAIN,
+  projectId: process.env.REACT_PROJECT_ID,
+  storageBucket: process.env.REACT_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_ID,
+  databaseURL: process.env.REACT_DATABASE_URL,
 };
 
 const app = initializeApp(firebaseConfig);
