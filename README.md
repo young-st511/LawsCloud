@@ -4,6 +4,15 @@
 
 # Laws Cloud
 
+## Table of Content
+
+1. [프로젝트 개요](#프로젝트-개요)
+2. [프로젝트 소개](#🏗️-프로젝트-소개)
+    1. [메인페이지](#메인-페이지)
+    2. [비교페이지](#비교-페이지)
+    3. [법률안페이지](#법률안-페이지)
+    4. [법률안 상세페이지](#법률안-상세페이지)
+
 ## 프로젝트 개요
 
 - 2000년대 이후 법률 발의안들의 키워드들을 워드 클라우드로 보여주는 웹 어플리케이션입니다.
@@ -18,7 +27,7 @@
 <br/>
 <br/>
 
-## 프로젝트 소개
+## 🏗️ 프로젝트 소개
 
 ### 메인 페이지
 
@@ -39,11 +48,9 @@
 
 <img src="./readme/LawsCloud상세페이지모달.PNG" alt="billDetail "/>
 
-<div style="margin-bottom: 30px">
+---
 
-</div>
-
-### Tech Stacks
+### ⚙️ Tech Stacks
 
 <!-- JavaScript -->
 <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/>
@@ -56,7 +63,7 @@
 <!-- FireBase -->
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
 
-<div>
+<div align=>
 
 ### Crew Info
 
@@ -66,7 +73,5 @@
 | 김관우 | FrontEnd | <a href="https://github.com/kykson2">@kykson2</a>           |
 | 우인우 | FrontEnd | <a href="https://github.com/wooinwoo">@wooinwoo</a>         |
 | 정영훈 | FrontEnd | <a href="https://github.com/young-st511">@young-st5111</a>  |
-
-</div>
 
 </div>
