@@ -1,29 +1,43 @@
-<div align="center" >
-<h1> Laws Cloud </h1>
+# 배포사이트 | [🔗Link](https://laws-cloud-dsklmlm35-young-st511.vercel.app)
 
-<div> 2000년대 이후 법률 발의안들의 키워드들을 워드 클라우드로 보여주는 웹 어플리케이션입니다. </div>
-<h3> Description of Project </h3>
-<h3> 사이트 도메인 </h3>
-<a href="lawsColud.top"> lawscolud.top </a>
-<h4> Why? </h4>
-각 연도별 국회의원들의 관심사에 대한 키워드를 한눈에 파악할 수 있음
+---
+
+# Laws Cloud
+
+## 프로젝트 개요
+
+- 2000년대 이후 법률 발의안들의 키워드들을 워드 클라우드로 보여주는 웹 어플리케이션입니다.
+- 3개의 발의안을 비교해 볼 수 있습니다.
+- 발의안의 상세 정보를 조회하고 코멘트를 남길 수 있습니다.
+
+### Why?
+
+- 각 연도별 국회의원들의 관심사에 대한 키워드를 한눈에 파악할 수 있음
+- 특정 연도(국회 기수) 별로 조회 및 비교가 가능하여 해당 연도 국회, 즉 민심의 방향이 어떠했는지 가늠해 볼 수 있음.
 
 <br/>
 <br/>
-<br/>
 
-<h2><b> Preview </b></h2><br/>
-<h3><b> 메인 페이지 </b></h3>
-<img src="./lawsCloud메인.PNG" alt="main" />
+## 프로젝트 소개
+
+### 메인 페이지
+
+<img src="./readme/lawsCloud메인.PNG" alt="main" />
 <br/><br/><br/>
-<h3><b> 비교 페이지 </b></h3>
-<img src="./LawsCloud비교.PNG" alt="compareCloud" />
+
+### 비교 페이지
+
+<img src="./readme/LawsCloud비교.PNG" alt="compareCloud" />
 <br/><br/><br/>
-<h3><b> 법률안 페이지 </b></h3>
-<img src="./LawsCloud법률안리스트.PNG" alt="billsList" />
+
+### 법률안 페이지
+
+<img src="./readme/LawsCloud법률안리스트.PNG" alt="billsList" />
 <br/><br/><br/>
-<h3><b> 법률안 상세페이지 </b></h3>
-<img src="./LawsCloud상세페이지모달.PNG" alt="billDetail "/>
+
+### 법률안 상세페이지
+
+<img src="./readme/LawsCloud상세페이지모달.PNG" alt="billDetail "/>
 
 <div style="margin-bottom: 30px">
 
