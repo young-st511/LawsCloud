@@ -53,6 +53,8 @@
 
 ---
 
+<div align="center">
+
 ### ⚙️ Tech Stacks
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black)
@@ -61,15 +63,13 @@
 ![Vite](https://img.shields.io/badge/styledcomponents-DB7093.svg?&style=for-the-badge&logo=styledcomponents&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
-<div align=>
-
 ### Crew Info
 
 | TEAM   | Position | Github                                                      |
 | ------ | -------- | ----------------------------------------------------------- |
-| 이승훈 | FrontEnd | <a href="https://github.com/mandarin-sep">@mandarin-sep</a> |
 | 김관우 | FrontEnd | <a href="https://github.com/kykson2">@kykson2</a>           |
 | 우인우 | FrontEnd | <a href="https://github.com/wooinwoo">@wooinwoo</a>         |
-| 정영훈 | FrontEnd | <a href="https://github.com/young-st511">@young-st5111</a>  |
+| 이승훈 | FrontEnd | <a href="https://github.com/mandarin-sep">@mandarin-sep</a> |
+| 정영훈 | FrontEnd | <a href="https://github.com/young-st511">@young-st511</a>   |
 
 </div>
