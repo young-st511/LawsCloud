@@ -1,8 +1,8 @@
-# 배포사이트 | [🔗Link](https://laws-cloud-dsklmlm35-young-st511.vercel.app)
-
----
-
 # Laws Cloud
+
+## 배포사이트 | [🔗Link](https://laws-cloud-dsklmlm35-young-st511.vercel.app)
+
+![main](./readme/lawsCloud메인.PNG)
 
 ## Table of Content
 
@@ -31,25 +31,33 @@
 
 ### 메인 페이지
 
-![main](./readme/lawsCloud메인.PNG)
+- 각 기수 별로 국회에서 발의한 법률안을 분석한 워드클라우드를 확인할 수 있습니다.
+  ![MainPage](./readme/LawsCloud-main.gif)
 
 <br/><br/><br/>
 
 ### 비교 페이지
 
-![compareCloud](./readme/LawsCloud비교.PNG)
+- 3개의 기수별로 발의안의 워드클라우드를 비교해 볼 수 있습니다.  
+  ![compareCloud](./readme/LawsCloud-compare.gif)
 
 <br/><br/><br/>
 
 ### 법률안 페이지
 
-![billsList](./readme/LawsCloud법률안리스트.PNG)
-
-<br/><br/><br/>
+- 메인페이지에서 키워드를 클릭하면 해당 키워드와 연관된 발의안을 검색할 수 있습니다.  
+  ![발의안-클릭하여-조회](./readme/LawsCloud-click.gif)
+- 검색창을 통해 발의안을 조회할 수 있습니다.  
+  ![발의안-상세조회](./readme/LawsCloud-detail.gif)
 
 ### 법률안 상세페이지
 
-![billDetail](./readme/LawsCloud상세페이지모달.PNG)
+- 각 발의안의 상세내용을 조회하고 댓글을 작성할 수 있습니다.  
+  ![댓글-작성](./readme/LawsCloud-leave-comment.gif)
+- 댓글을 삭제할 수 있습니다.
+  ![댓글-삭제](./readme/LawsCloud-delete-comment.gif)
+
+<br/><br/><br/>
 
 ---
 
@@ -59,7 +67,7 @@
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black)
 ![React](https://img.shields.io/badge/React-61DAFB.svg?&style=for-the-badge&logo=React&logoColor=black)
-![Recoil](https://img.shields.io/badge/Recoil-646CFF.svg?&style=for-the-badge)
+![Recoil](https://img.shields.io/badge/Recoil-646CFF.svg?&style=for-the-badge&logo=Recoil)
 ![Vite](https://img.shields.io/badge/styledcomponents-DB7093.svg?&style=for-the-badge&logo=styledcomponents&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
